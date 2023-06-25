@@ -5,6 +5,7 @@ import { description, keywords, developerName } from "./meta";
 export default defineConfig({
   title: "DapanDocs",
   description,
+  appearance: "dark",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
