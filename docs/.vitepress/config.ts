@@ -1,8 +1,11 @@
 import { defineConfig } from "vitepress";
+import { withPwa } from "@vite-pwa/vitepress";
 import { description, keywords, developerName } from "./meta";
+import { pwa } from './scripts/pwa'
 
 // https://vitepress.dev/reference/site-config
-export default defineConfig({
+export default withPwa(defineConfig({
+  pwa,
   title: "DapanDocs",
   description,
   appearance: "dark",
@@ -60,4 +63,4 @@ export default defineConfig({
       },
     ],
   ],
-});
+}));

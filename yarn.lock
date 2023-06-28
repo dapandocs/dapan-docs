@@ -281,6 +281,11 @@
   resolved "https://registry.npmmirror.com/@types/web-bluetooth/-/web-bluetooth-0.0.17.tgz#5c9f3c617f64a9735d7b72a7cc671e166d900c40"
   integrity sha512-4p9vcSmxAayx72yn70joFoL44c9MO/0+iVEBIQXe3v2h2SiAsEIo/G5v6ObFWvNKRFjbrVadNf9LqEEZeQPzdA==
 
+"@vite-pwa/vitepress@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.npmmirror.com/@vite-pwa/vitepress/-/vitepress-0.2.0.tgz#776e160b90021dc64a0a3c8a669f922f4058b07d"
+  integrity sha512-dVQVaP6NB9woCFe4UASUqRp7uwBQJOVXlJlqK4krqXcbb3NuXIXIWOnU7HLpJnHqZj5U/81gKtLN6gs5gJBwiQ==
+
 "@vitejs/plugin-vue@^4.2.3":
   version "4.2.3"
   resolved "https://registry.npmmirror.com/@vitejs/plugin-vue/-/plugin-vue-4.2.3.tgz#ee0b6dfcc62fe65364e6395bf38fa2ba10bb44b6"
