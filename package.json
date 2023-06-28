@@ -8,6 +8,7 @@
     "preview": "vitepress preview docs"
   },
   "dependencies": {
-    "@vite-pwa/vitepress": "^0.2.0"
+    "@vite-pwa/vitepress": "^0.2.0",
+    "vite-plugin-pwa": "^0.16.4"
   }
 }
