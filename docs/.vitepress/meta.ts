@@ -5,3 +5,5 @@ export const description =
   "前端进阶开发技巧，浏览器扩展开发技巧，React与Vue开发技巧，前端全链路学习网站";
 
 export const developerName = "dapan";
+
+export const title = "DapanDocs";
