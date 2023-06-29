@@ -1,5 +1,5 @@
 <p align="center">
-<img  alt="dapan" src="https://skillgroup.cn/logo.svg" style="max-width: 200px; height: auto;" />
+<img  alt="dapan" src="https://skillgroup.cn/logo.svg" style="width: 200px; height: auto;" />
 </p>
 
 <h1 align="center">
