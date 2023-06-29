@@ -1,7 +1,7 @@
 export default {
-  appId: 'I5Q622DMRD',
-  apiKey: 'af4d550681b5aa6d22972f820a7f05ef',
-  indexName: 'dapan',
+  appId: 'IR73WYJJ0F',
+  apiKey: 'fb9234686b81073dbc677abcec4b2a4c',
+  indexName: 'dapandocs',
   placeholder: '请输入关键词',
   translations: {
     button: {
