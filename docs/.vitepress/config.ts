@@ -3,6 +3,7 @@ import { withPwa } from "@vite-pwa/vitepress";
 import { description, keywords, title, developerName } from "./meta";
 import { pwa } from "./scripts/pwa";
 import algolia from "./scripts/algolia";
+import sidebar from "./sidebar";
 
 // https://vitepress.dev/reference/site-config
 export default withPwa(
@@ -16,23 +17,20 @@ export default withPwa(
         provider: "algolia",
         options: algolia,
       },
+      sidebar,
       // https://vitepress.dev/reference/default-theme-config
       nav: [
-        { text: "Home", link: "/" },
-        { text: "Examples", link: "/markdown-examples" },
-      ],
-      logo: "./logo.svg",
-      sidebar: [
         {
-          text: "Examples",
+          text: "🔥主流框架",
           items: [
-            { text: "Markdown Examples", link: "/markdown-examples" },
-            { text: "Runtime API Examples", link: "/api-examples" },
+            { text: "React", link: "/framework/react/" },
+            { text: "Vue", link: "/framework/vue/" },
           ],
         },
       ],
+      logo: "./logo.svg",
       socialLinks: [
-        { icon: "github", link: "https://github.com/vuejs/vitepress" },
+        { icon: "github", link: "https://github.com/dapandocs/danpan-docs" },
       ],
     },
     head: [

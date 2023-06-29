@@ -14,11 +14,11 @@ hero:
     alt: DapanDocs
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: 开始阅读
+      link: /framework/react/
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: 面试宝典
+      link: /interview/basic/
 
 # features:
 #   - title: Feature A
