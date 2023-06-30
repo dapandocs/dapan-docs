@@ -15,11 +15,12 @@ yarn add @vite-pwa/vitepress
 ```
 
 ```js
-// vite.config.js
+// .vitepress/config.js
 import { defineConfig } from "vite";
 import { withPwa } from "@vite-pwa/vitepress";
 
-export default withPwa({
+export default withPwa(
+  defineConfig({
   pwa: {
     outDir: ".vitepress/dist", // 输出目录
     registerType: "autoUpdate", // 注册类型为自动更新
@@ -97,7 +98,8 @@ export default withPwa({
       ],
     },
   },
-});
+})
+);
 ```
  
 ## PWA 线上验证
