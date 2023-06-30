@@ -7,3 +7,5 @@ export const description =
 export const developerName = "dapan";
 
 export const title = "DapanDocs";
+
+export const github = 'https://github.com/dapandocs/danpan-docs';
