@@ -1,0 +1,3 @@
+# VitePress 如何开启 algolia 搜索功能
+
+待补充...

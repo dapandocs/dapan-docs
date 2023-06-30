@@ -34,6 +34,7 @@ export default withPwa(
           items: [
             { text: "React", link: "/framework/react/" },
             { text: "Vue", link: "/framework/vue/" },
+            { text: "VitePress", link: "/framework/vitepress/" },
           ],
         },
       ],
