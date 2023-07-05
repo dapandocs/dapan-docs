@@ -1,17 +1,14 @@
 import React, { createElement, ReactElement } from "react";
 import { createRoot } from "react-dom/client";
-import { Ref, ref, onMounted } from "vue";
+import { Ref, onMounted } from "vue";
 
-type ReactRenderResult = {
-  el: Ref<Element | undefined>;
-};
-
-function renderReact(Component: React.ComponentType<any>): ReactRenderResult {
-  const el: Ref<Element | undefined> = ref();
+function renderReact(
+  Component: React.ComponentType<any>,
+  el: Ref<Element | undefined>,
+) {
   onMounted(() => {
     const root = createRoot(el.value!);
-    root.render(createElement(Component, {}, null) as ReactElement);
+    root.render(createElement(Component, null, null) as ReactElement);
   });
-  return { el };
 }
 export default renderReact;
