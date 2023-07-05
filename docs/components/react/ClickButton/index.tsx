@@ -1,20 +1,20 @@
 import React, { useState } from "react";
+import { Button } from "antd";
 
 function ClickButton() {
   const [count, setCount] = useState(0);
-  
+
   return (
     <>
-      <div
-        style={{ color: "red" }}
+      <Button
+        type="primary"
         onClick={() => {
           setCount(count + 1);
-
         }}
       >
-        ClickButton2
-      </div>
-      {count}
+        计数器
+      </Button>
+      <p color="amber">{count}</p>
     </>
   );
 }

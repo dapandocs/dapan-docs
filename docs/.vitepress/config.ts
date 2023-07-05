@@ -1,6 +1,7 @@
 import { defineConfig } from "vitepress";
 import { withPwa } from "@vite-pwa/vitepress";
 import react from "@vitejs/plugin-react";
+import UnoCSS from 'unocss/vite'
 import { description, keywords, title, developerName, github } from "./meta";
 import { pwa } from "./scripts/pwa";
 import algolia from "./scripts/algolia";
@@ -26,7 +27,10 @@ export default withPwa(
           "@vitepress": "/.vitepress",
         },
       },
-      plugins: [react()],
+      plugins: [
+        react(),
+        UnoCSS(),
+      ],
     },
     locales: {
       root: { label: "简体中文", lang: "zh-CN" },

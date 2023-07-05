@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "esnext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "noUnusedLocals": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react",
+    "lib": ["ESNext", "DOM"]
+  },
+  "include": [
+    "docs",
+    "docs/.vitepress/*.ts"
+  ],
+  "exclude": ["**/node_modules/**", "**/dist/**"]
+}
