@@ -1,7 +1,6 @@
 node_modules
 .temp
-docs/.vitepress/cache
-dist
+docs/.vitepress/cache/
 .vscode
 cache
 .eslintcache

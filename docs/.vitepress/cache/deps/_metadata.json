@@ -1,53 +1,44 @@
 {
-  "hash": "7c0734f5",
-  "browserHash": "ce97c053",
+  "hash": "464c0531",
+  "browserHash": "0122032d",
   "optimized": {
     "react": {
       "src": "../../../../node_modules/react/index.js",
       "file": "react.js",
-      "fileHash": "1dc42d36",
+      "fileHash": "69f0bc1a",
       "needsInterop": true
     },
     "react/jsx-dev-runtime": {
       "src": "../../../../node_modules/react/jsx-dev-runtime.js",
       "file": "react_jsx-dev-runtime.js",
-      "fileHash": "c47a8e8f",
+      "fileHash": "60a14209",
       "needsInterop": true
     },
     "vue": {
       "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "3b9369fd",
+      "fileHash": "481a703b",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../../node_modules/@vue/devtools-api/lib/esm/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "7d2804ba",
-      "needsInterop": false
-    },
-    "antd": {
-      "src": "../../../../node_modules/antd/es/index.js",
-      "file": "antd.js",
-      "fileHash": "4eff5d8a",
+      "fileHash": "41ee43f6",
       "needsInterop": false
     },
     "react-dom/client": {
       "src": "../../../../node_modules/react-dom/client.js",
       "file": "react-dom_client.js",
-      "fileHash": "02d8ff9b",
+      "fileHash": "bb79e81f",
       "needsInterop": true
     }
   },
   "chunks": {
-    "chunk-TJLULW6L": {
-      "file": "chunk-TJLULW6L.js"
+    "chunk-I2CR4HUG": {
+      "file": "chunk-I2CR4HUG.js"
     },
-    "chunk-DDEBXIGR": {
-      "file": "chunk-DDEBXIGR.js"
-    },
-    "chunk-UXIASGQL": {
-      "file": "chunk-UXIASGQL.js"
+    "chunk-76J2PTFD": {
+      "file": "chunk-76J2PTFD.js"
     }
   }
 }

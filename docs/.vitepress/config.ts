@@ -53,7 +53,7 @@ export default withPwa(
           ],
         },
       ],
-      logo: "./logo.svg",
+      logo: "/logo.svg",
       lastUpdatedText: "最后一次更新于",
       outline: "deep",
       docFooter: {
