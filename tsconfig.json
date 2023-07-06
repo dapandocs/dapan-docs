@@ -11,7 +11,12 @@
     "isolatedModules": true,
     "allowSyntheticDefaultImports": true,
     "jsx": "react",
-    "lib": ["ESNext", "DOM"]
+    "lib": ["ESNext", "DOM"],
+    "baseUrl": ".",
+    "paths": {
+      "@vitepress": ["docs/.vitepress/*"],
+      "@components": ["docs/components/*"],
+    }
   },
   "include": [
     "docs",

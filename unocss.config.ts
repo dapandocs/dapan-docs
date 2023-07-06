@@ -23,7 +23,7 @@ export default defineConfig({
   ],
   theme: {
     colors: {
-      primary: '#3eaf7c',
+      primary: 'var(--vp-c-brand)',
     },
     fontFamily: {
       mono: 'var(--vt-font-family-mono)',

@@ -1,8 +1,11 @@
 import { defineConfig } from "vitepress";
+import { resolve } from 'node:path'
 import { withPwa } from "@vite-pwa/vitepress";
 import react from "@vitejs/plugin-react";
-import UnoCSS from 'unocss/vite'
+import UnoCSS from "unocss/vite";
+import VueComponents from "unplugin-vue-components/vite";
 import { description, keywords, title, developerName, github } from "./meta";
+import MarkdownTransform from "./plugins/vite-plugin-md-transform";
 import { pwa } from "./scripts/pwa";
 import algolia from "./scripts/algolia";
 import sidebar from "./sidebar";
@@ -30,6 +33,18 @@ export default withPwa(
       plugins: [
         react(),
         UnoCSS(),
+        MarkdownTransform(),
+        VueComponents({
+          dirs: './components/vue',
+          include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
+          // resolvers: [
+          //   IconsResolver({
+          //     componentPrefix: "",
+          //   }),
+          // ],
+          dts: "./components/vue/components.d.ts",
+          transformer: "vue3",
+        }),
       ],
     },
     locales: {
