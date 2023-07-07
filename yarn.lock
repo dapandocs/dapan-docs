@@ -1252,7 +1252,15 @@
   resolved "https://registry.npmmirror.com/@esbuild/win32-x64/-/win32-x64-0.18.11.tgz#6526c7e1b40d5b9f0a222c6b767c22f6fb97aa57"
   integrity sha512-rQI4cjLHd2hGsM1LqgDI7oOCYbQ6IBOVsX9ejuRMSze0GqXUG2ekwiKkiBU1pRGSeCqFFHxTrcEydB2Hyoz9CA==
 
-"@iconify/types@^2.0.0":
+"@iconify/json@^2.2.87":
+  version "2.2.87"
+  resolved "https://registry.npmmirror.com/@iconify/json/-/json-2.2.87.tgz#b1b9f6c01d142cf00291e5414850c3a22eef61ae"
+  integrity sha512-sIFqYdTa5St7yjCHQ8wxgugNFVSjcboEOErf2ouxMGg8OACj/r+X6RXqIm+Y2OzEtjVnz6pR2WwlSbFPrijhGQ==
+  dependencies:
+    "@iconify/types" "*"
+    pathe "^1.1.0"
+
+"@iconify/types@*", "@iconify/types@^2.0.0":
   version "2.0.0"
   resolved "https://registry.npmmirror.com/@iconify/types/-/types-2.0.0.tgz#ab0e9ea681d6c8a1214f30cd741fe3a20cc57f57"
   integrity sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==
@@ -1543,7 +1551,7 @@
   dependencies:
     "@unocss/core" "0.53.4"
 
-"@unocss/preset-icons@0.53.4":
+"@unocss/preset-icons@0.53.4", "@unocss/preset-icons@^0.53.4":
   version "0.53.4"
   resolved "https://registry.npmmirror.com/@unocss/preset-icons/-/preset-icons-0.53.4.tgz#2d9e361349ab6bd064562b9155c8bc99b5c40d70"
   integrity sha512-PSc1svzDq/o7lKLrZohFIMf0ZqOypYdBY1Wvfp+Gd6Zc4uybnCTVme3pnlgYIcjSO24ilt/PeWgx3SxD8ypMcw==
@@ -3017,7 +3025,7 @@ path-parse@^1.0.7:
   resolved "https://registry.npmmirror.com/path-parse/-/path-parse-1.0.7.tgz#fbc114b60ca42b30d9daf5858e4bd68bbedb6735"
   integrity sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==
 
-pathe@^1.1.1:
+pathe@^1.1.0, pathe@^1.1.1:
   version "1.1.1"
   resolved "https://registry.npmmirror.com/pathe/-/pathe-1.1.1.tgz#1dd31d382b974ba69809adc9a7a347e65d84829a"
   integrity sha512-d+RQGp0MAYTIaDBIMmOfMwz3E+LOZnxx1HZd5R18mmCZY0QBlK0LDZfPc8FW8Ed2DlvsuE6PRjroDY+wg4+j/Q==
