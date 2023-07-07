@@ -75,9 +75,9 @@ export default withPwa(
         next: "下一篇",
       },
       returnToTopLabel: "返回顶部",
-      outlineTitle: "导航栏",
+      outlineTitle: "大纲",
       darkModeSwitchLabel: "外观",
-      sidebarMenuLabel: "归档",
+      sidebarMenuLabel: "目录",
       editLink: {
         pattern: `${github}/blob/master/docs/:path`,
         text: "为此页提供修改建议",

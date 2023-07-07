@@ -1,3 +1,8 @@
+<!-- ---
+author: "DapanDocs"
+contributors: ["ixahmedxi"]
+--- -->
+
 ### React 组件1
 
 <div ref="button1" />
