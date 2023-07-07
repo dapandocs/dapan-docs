@@ -1,5 +1,4 @@
 import { defineConfig } from "vitepress";
-import { resolve } from 'node:path'
 import { withPwa } from "@vite-pwa/vitepress";
 import react from "@vitejs/plugin-react";
 import UnoCSS from "unocss/vite";
@@ -19,7 +18,7 @@ export default withPwa(
     appearance: "dark",
     lastUpdated: true,
     useWebFonts: false,
-    cleanUrls: true,
+    cleanUrls: false,
     markdown: {
       lineNumbers: true,
     },
@@ -81,7 +80,7 @@ export default withPwa(
       sidebarMenuLabel: "归档",
       editLink: {
         pattern: `${github}/blob/master/docs/:path`,
-        text: "在 GitHub 上编辑此页",
+        text: "为此页提供修改建议",
       },
       socialLinks: [{ icon: "github", link: github }],
     },

@@ -1,36 +1,30 @@
 {
   "hash": "6101b12c",
-  "browserHash": "31757081",
+  "browserHash": "5d67f03b",
   "optimized": {
     "react": {
       "src": "../../../../node_modules/react/index.js",
       "file": "react.js",
-      "fileHash": "6161741c",
+      "fileHash": "471cb9c6",
       "needsInterop": true
     },
     "react/jsx-dev-runtime": {
       "src": "../../../../node_modules/react/jsx-dev-runtime.js",
       "file": "react_jsx-dev-runtime.js",
-      "fileHash": "265aeb80",
+      "fileHash": "75a1cc07",
       "needsInterop": true
     },
     "vue": {
       "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "35732340",
+      "fileHash": "68a4d3e6",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../../node_modules/@vue/devtools-api/lib/esm/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "79f46e18",
+      "fileHash": "fc5c013b",
       "needsInterop": false
-    },
-    "react-dom/client": {
-      "src": "../../../../node_modules/react-dom/client.js",
-      "file": "react-dom_client.js",
-      "fileHash": "6f94040c",
-      "needsInterop": true
     }
   },
   "chunks": {
