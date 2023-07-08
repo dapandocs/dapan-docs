@@ -17,7 +17,7 @@ export default withPwa(
     pwa,
     title,
     // 与pwa的outDir保持一致
-    outDir: resolve(__dirname, "../dist"),
+    outDir: resolve(__dirname, "../../dist"),
     description,
     appearance: "dark",
     lastUpdated: true,

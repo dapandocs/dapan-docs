@@ -3,6 +3,7 @@ node_modules
 docs/.vitepress/cache/
 docs/.vitepress/dist/
 dist/
+docs/dist/
 .vscode
 cache
 .eslintcache
