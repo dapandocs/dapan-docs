@@ -94,6 +94,10 @@ export default withPwa(
       ["meta", { name: "author", content: developerName }],
       [
         "meta",
+        { name: "google-site-verification", content: "8C08prB1osC3jsMbYZjmrkWEIM1zduj1OxedQjghNxs" },
+      ],
+      [
+        "meta",
         { name: "baidu-site-verification", content: "codeva-xf7u8GA3Wp" },
       ],
       [
