@@ -107,7 +107,7 @@ export default withPwa(
         "meta",
         { "http-equiv": "Content-Type", content: "text/html;charset=gb2312" },
       ],
-      ["meta", { name: "sogou_site_verification", content: "GLM5anPyt6" }],
+      ["meta", { name: "sogou_site_verification", content: "FelPBxxAnk" }],
       ["meta", { property: "og:type", content: "article" }],
       ["meta", { name: "application-name", content: developerName }],
       ["meta", { name: "apple-mobile-web-app-title", content: developerName }],
