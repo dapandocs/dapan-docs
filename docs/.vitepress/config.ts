@@ -1,7 +1,9 @@
 import { defineConfig } from "vitepress";
+import { resolve } from "node:path";
 import { withPwa } from "@vite-pwa/vitepress";
 import react from "@vitejs/plugin-react";
 import UnoCSS from "unocss/vite";
+import { generateSitemap as sitemap } from "sitemap-ts";
 import VueComponents from "unplugin-vue-components/vite";
 import { description, keywords, title, developerName, github } from "./meta";
 import MarkdownTransform from "./plugins/vite-plugin-md-transform";
@@ -14,6 +16,8 @@ export default withPwa(
   defineConfig({
     pwa,
     title,
+    // 与pwa的outDir保持一致
+    outDir: resolve(__dirname, "../dist"),
     description,
     appearance: "dark",
     lastUpdated: true,
@@ -34,7 +38,7 @@ export default withPwa(
         UnoCSS(),
         MarkdownTransform(),
         VueComponents({
-          dirs: './components/vue',
+          dirs: "./components/vue",
           include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
           // resolvers: [
           //   IconsResolver({
@@ -118,5 +122,8 @@ export default withPwa(
         },
       ],
     ],
+    async buildEnd(siteConfig) {
+      sitemap({ hostname: "https://www.skillgroup.cn/" });
+    },
   })
 );

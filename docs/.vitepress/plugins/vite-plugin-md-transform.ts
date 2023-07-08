@@ -1,12 +1,11 @@
 import type { Plugin } from "vite";
-import { replacer } from "../scripts/utils";
+import { replacer, getNoSSRComponents } from "../scripts/utils";
 
 async function getMarkdownComponents() {
-  const footer = `
-  ## 贡献者
-  <Contributors/>\n
-  <CopyRight/>
-  `;
+  const footer = `## 贡献者\n${getNoSSRComponents([
+    "Contributors",
+    "CopyRight",
+  ])}`;
   return {
     footer,
   };

@@ -1,11 +1,10 @@
-
 /**
  * 字符替换
- * @param code 
- * @param replaceStr 
- * @param key 
- * @param position 
- * @returns 
+ * @param code
+ * @param replaceStr
+ * @param key
+ * @param position
+ * @returns
  */
 export function replacer(
   code: string,
@@ -27,4 +26,15 @@ export function replacer(
   }
 
   return code.replace(regex, target);
+}
+
+/**
+ * 获取SSR组件
+ * @param components
+ * @returns
+ */
+export function getNoSSRComponents(components: string[]) {
+  return components.reduce((pre: string, component: string) => {
+    return pre + `<ClientOnly><${component}/></ClientOnly>\n`;
+  }, "");
 }
