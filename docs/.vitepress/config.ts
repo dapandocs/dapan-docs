@@ -91,7 +91,11 @@ export default withPwa(
     head: [
       ["meta", { name: "referrer", content: "no-referrer-when-downgrade" }],
       ["meta", { name: "keywords", content: keywords }],
-      ["meta", { name: "author", content: "Choi Yang" }],
+      ["meta", { name: "author", content: developerName }],
+      [
+        "meta",
+        { name: "baidu-site-verification", content: "codeva-xf7u8GA3Wp" },
+      ],
       ["meta", { property: "og:type", content: "article" }],
       ["meta", { name: "application-name", content: developerName }],
       ["meta", { name: "apple-mobile-web-app-title", content: developerName }],
