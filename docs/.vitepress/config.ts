@@ -96,6 +96,10 @@ export default withPwa(
         "meta",
         { name: "baidu-site-verification", content: "codeva-xf7u8GA3Wp" },
       ],
+      [
+        "meta",
+        { name: "360-site-verification", content: "37fc981df313cb2376c89f6fded04cfc" },
+      ],
       ["meta", { property: "og:type", content: "article" }],
       ["meta", { name: "application-name", content: developerName }],
       ["meta", { name: "apple-mobile-web-app-title", content: developerName }],
