@@ -98,12 +98,16 @@ export default withPwa(
       ],
       [
         "meta",
-        { name: "360-site-verification", content: "37fc981df313cb2376c89f6fded04cfc" },
+        {
+          name: "360-site-verification",
+          content: "37fc981df313cb2376c89f6fded04cfc",
+        },
       ],
       [
         "meta",
-        { name: "sogou_site_verification", content: "GLM5anPyt6" },
+        { "http-equiv": "Content-Type", content: "text/html;charset=gb2312" },
       ],
+      ["meta", { name: "sogou_site_verification", content: "GLM5anPyt6" }],
       ["meta", { property: "og:type", content: "article" }],
       ["meta", { name: "application-name", content: developerName }],
       ["meta", { name: "apple-mobile-web-app-title", content: developerName }],
