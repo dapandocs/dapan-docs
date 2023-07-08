@@ -105,9 +105,11 @@ export default withPwa(
       ],
       [
         "meta",
-        { "http-equiv": "Content-Type", content: "text/html;charset=gb2312" },
+        {
+          name: "msvalidate.01",
+          content: "95080530C3B969C7083402BB727761AA",
+        },
       ],
-      ["meta", { name: "sogou_site_verification", content: "FelPBxxAnk" }],
       ["meta", { property: "og:type", content: "article" }],
       ["meta", { name: "application-name", content: developerName }],
       ["meta", { name: "apple-mobile-web-app-title", content: developerName }],
@@ -115,7 +117,6 @@ export default withPwa(
         "meta",
         { name: "apple-mobile-web-app-status-bar-style", content: "default" },
       ],
-
       ["link", { rel: "shortcut icon", href: "/logo.svg" }],
       ["link", { rel: "icon", type: "image/x-icon", href: "/logo.svg" }],
       // webfont
