@@ -19,4 +19,13 @@ export default {
       ],
     },
   ],
+  "/framework/unocss/": [
+    {
+      text: "UnoCSS",
+      collapsed: false,
+      items: [
+        { text: "简述", link: "/framework/unocss/" },
+      ],
+    },
+  ],
 };

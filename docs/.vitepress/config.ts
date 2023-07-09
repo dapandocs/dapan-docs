@@ -40,11 +40,6 @@ export default withPwa(
         VueComponents({
           dirs: "./components/vue",
           include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
-          // resolvers: [
-          //   IconsResolver({
-          //     componentPrefix: "",
-          //   }),
-          // ],
           dts: "./components/vue/components.d.ts",
           transformer: "vue3",
         }),
@@ -68,6 +63,7 @@ export default withPwa(
             { text: "React", link: "/framework/react/" },
             { text: "Vue", link: "/framework/vue/" },
             { text: "VitePress", link: "/framework/vitepress/" },
+            { text: "UnoCSS", link: "/framework/unocss/" },
           ],
         },
       ],
@@ -94,7 +90,10 @@ export default withPwa(
       ["meta", { name: "author", content: developerName }],
       [
         "meta",
-        { name: "google-site-verification", content: "8C08prB1osC3jsMbYZjmrkWEIM1zduj1OxedQjghNxs" },
+        {
+          name: "google-site-verification",
+          content: "8C08prB1osC3jsMbYZjmrkWEIM1zduj1OxedQjghNxs",
+        },
       ],
       [
         "meta",

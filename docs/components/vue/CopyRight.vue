@@ -22,11 +22,14 @@ function getGithubLink(name: string) {
 <template>
   <div
     border="1 solid [var(--vp-c-border)] opacity-50 rounded-4"
-    p="12"
+    p="y-24 x-12"
     m="t-24"
+    relative
+    break="words"
   >
+    <div i="fa6-solid-copyright" absolute top="12" right="16" />
     <div>
-      <span font="bold">文章作者：</span>
+      <span font="bold">作 者：</span>
       <span>
         <a :href="getGithubLink(author)" rel="noreferrer" target="_blank">
           {{ getName(author) }}
@@ -34,12 +37,16 @@ function getGithubLink(name: string) {
       </span>
     </div>
     <div m="t-8">
-      <span font="bold">文章链接：</span>
+      <span font="bold">链 接：</span>
       <span>
         <a :href="pageHref" rel="noreferrer" target="_blank">
           {{ pageHref }}
         </a>
       </span>
+    </div>
+    <div m="t-8">
+      <span font="bold">合 作：</span>
+      <span>待定... </span>
     </div>
   </div>
 </template>
