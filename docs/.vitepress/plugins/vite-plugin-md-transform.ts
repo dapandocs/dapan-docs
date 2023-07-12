@@ -24,13 +24,12 @@ function vitePluginMdTransform(): Plugin {
       // 排除 docs/index.md 文件
       if (_name === "docs" && i === "index.md") return code;
 
-      // 根据生产环境替换图片地址
-      if (process.env.NODE_ENV === "production") {
-        code = code.replace(
-          /\((\/[^)]+\.(png|svg|jpg))\)/g,
-          "(https://skillgroup.cn$1)"
-        );
-      }
+      // 供博客直达小助手使用
+      // code = code.replace(
+      //   /\((\/[^)]+\.(png|svg|jpg))\)/g,
+      //   "(https://skillgroup.cn$1)"
+      // );
+      // console.log(code);
 
       const { footer } = await getMarkdownComponents();
       // 追加 Footer 组件
