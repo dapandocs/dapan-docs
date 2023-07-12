@@ -23,8 +23,16 @@ function vitePluginMdTransform(): Plugin {
 
       // 排除 docs/index.md 文件
       if (_name === "docs" && i === "index.md") return code;
-      const { footer } = await getMarkdownComponents();
 
+      // 根据生产环境替换图片地址
+      if (process.env.NODE_ENV === "production") {
+        code = code.replace(
+          /\((\/[^)]+\.(png|svg|jpg))\)/g,
+          "(https://skillgroup.cn$1)"
+        );
+      }
+
+      const { footer } = await getMarkdownComponents();
       // 追加 Footer 组件
       code = replacer(code, footer, "Footer", "bottom");
       return code;

@@ -6,7 +6,7 @@ import { title, description } from "../meta";
 export const pwa: Partial<VitePWAOptions> = {
   // 根目录
   outDir: resolve(__dirname, "../../../dist"),
-  registerType: "autoUpdate",
+  registerType: "prompt",
   includeManifestIcons: false,
   manifest: {
     id: "/",
