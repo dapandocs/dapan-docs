@@ -9,7 +9,7 @@
     "@types/react": "18.2.14",
     "@types/react-dom": "18.2.6",
     "@unocss/preset-icons": "^0.53.4",
-    "sitemap-ts": "^1.4.0",
+    "sitemap": "^7.1.1",
     "typescript": "^5.1.6",
     "unocss": "^0.53.4",
     "vitepress": "^1.0.0-beta.3",

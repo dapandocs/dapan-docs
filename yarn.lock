@@ -149,11 +149,6 @@
     execa "^5.1.1"
     find-up "^5.0.0"
 
-"@antfu/utils@0.7.2":
-  version "0.7.2"
-  resolved "https://registry.npmmirror.com/@antfu/utils/-/utils-0.7.2.tgz#3bb6f37a6b188056fe9e2f363b6aa735ed65d7ca"
-  integrity sha512-vy9fM3pIxZmX07dL+VX1aZe7ynZ+YyB0jY+jE6r3hOK6GNY2t6W8rzpFC4tgpbXUYABkFQwgJq2XYXlxbXAI0g==
-
 "@antfu/utils@^0.7.2", "@antfu/utils@^0.7.4":
   version "0.7.5"
   resolved "https://registry.npmmirror.com/@antfu/utils/-/utils-0.7.5.tgz#c36f37add92a7de57b9c29ae0c1f399706bff345"
@@ -2325,17 +2320,6 @@ fast-deep-equal@^3.1.1:
   resolved "https://registry.npmmirror.com/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz#3a7d56b559d6cbc3eb512325244e619a65c6c525"
   integrity sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==
 
-fast-glob@3.2.12:
-  version "3.2.12"
-  resolved "https://registry.npmmirror.com/fast-glob/-/fast-glob-3.2.12.tgz#7f39ec99c2e6ab030337142da9e0c18f37afae80"
-  integrity sha512-DVj4CQIYYow0BlaelwK1pHl5n5cRSJfM60UA0zK891sVInoPri2Ekj7+e1CT3/3qxXenpI+nBBmQAcJPJgaj4w==
-  dependencies:
-    "@nodelib/fs.stat" "^2.0.2"
-    "@nodelib/fs.walk" "^1.2.3"
-    glob-parent "^5.1.2"
-    merge2 "^1.3.0"
-    micromatch "^4.0.4"
-
 fast-glob@^3.2.12:
   version "3.3.0"
   resolved "https://registry.npmmirror.com/fast-glob/-/fast-glob-3.3.0.tgz#7c40cb491e1e2ed5664749e87bfb516dbe8727c0"
@@ -3331,17 +3315,7 @@ sirv@^2.0.3:
     mrmime "^1.0.0"
     totalist "^3.0.0"
 
-sitemap-ts@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.npmmirror.com/sitemap-ts/-/sitemap-ts-1.4.0.tgz#2d0a4fbbe996b2872b9da35f3e33a05919101f4e"
-  integrity sha512-M/UPvSZmTluxLWhy5bGvPRRd0E1U9u87Ridh46GjCU2ZUJ1IvvJ9EggGrje2wGkCK13fXXMhjvQCb2v2oYaSBA==
-  dependencies:
-    "@antfu/utils" "0.7.2"
-    fast-glob "3.2.12"
-    sitemap "7.1.1"
-    xml-formatter "3.3.2"
-
-sitemap@7.1.1:
+sitemap@^7.1.1:
   version "7.1.1"
   resolved "https://registry.npmmirror.com/sitemap/-/sitemap-7.1.1.tgz#eeed9ad6d95499161a3eadc60f8c6dce4bea2bef"
   integrity sha512-mK3aFtjz4VdJN0igpIJrinf3EO8U8mxOPsTBzSsy06UtjZQJ3YY3o3Xa7zSc5nMqcMrRwlChHZ18Kxg0caiPBg==
@@ -3952,18 +3926,6 @@ wrappy@1:
   version "1.0.2"
   resolved "https://registry.npmmirror.com/wrappy/-/wrappy-1.0.2.tgz#b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"
   integrity sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==
-
-xml-formatter@3.3.2:
-  version "3.3.2"
-  resolved "https://registry.npmmirror.com/xml-formatter/-/xml-formatter-3.3.2.tgz#1b12a1cda796ad94821fadcc0237c9f8db7d5169"
-  integrity sha512-ld34F1b7+2UQGNkfsAV4MN3/b7cdUstyMj3XJhzKFasOPtMToVCkqmrNcmrRuSlPxgH1K9tXPkqr75gAT3ix2g==
-  dependencies:
-    xml-parser-xo "^4.0.3"
-
-xml-parser-xo@^4.0.3:
-  version "4.1.0"
-  resolved "https://registry.npmmirror.com/xml-parser-xo/-/xml-parser-xo-4.1.0.tgz#f97b7ea8cb400813e5306c25c34ac17fdf673a45"
-  integrity sha512-9mQMLmq8J++XlQH9WF57oQxFVbR3YM6dPPtTuV+++aMe2gRoRU/kj819/6IptUmfhC1d2DSFiYxEcpkoLabeJw==
 
 yallist@^3.0.2:
   version "3.1.1"

@@ -3,12 +3,12 @@ import { resolve } from "node:path";
 import { withPwa } from "@vite-pwa/vitepress";
 import react from "@vitejs/plugin-react";
 import UnoCSS from "unocss/vite";
-import { generateSitemap as sitemap } from "sitemap-ts";
 import VueComponents from "unplugin-vue-components/vite";
 import { description, keywords, title, developerName, github } from "./meta";
 import MarkdownTransform from "./plugins/vite-plugin-md-transform";
 import { pwa } from "./scripts/pwa";
 import algolia from "./scripts/algolia";
+import { links, getSiteUrlLinks, generateSiteMap } from "./scripts/sitemap";
 import sidebar from "./sidebar";
 
 // https://vitepress.dev/reference/site-config
@@ -142,8 +142,11 @@ export default withPwa(
         },
       ],
     ],
+    transformHtml: (_, id, ctx) => {
+      getSiteUrlLinks(id, ctx);
+    },
     async buildEnd(siteConfig) {
-      sitemap({ hostname: "https://www.skillgroup.cn/" });
+      generateSiteMap(siteConfig);
     },
   })
 );
