@@ -1,3 +1,7 @@
+---
+sitemapTime: 2023/07/14
+---
+
 # VitePress 简述
 
 VitePress 是一个由 Vue 和 Vite 驱动的静态网站生成器。它是为了创建文档网站而设计的，但也可以用于构建博客和其他静态网站。以下是 VitePress 的一些主要功能：

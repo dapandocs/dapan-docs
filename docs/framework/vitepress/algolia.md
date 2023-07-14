@@ -1,3 +1,7 @@
+---
+sitemapTime: 2023/07/14
+---
+
 # VitePress 如何开启 algolia 搜索功能
 
 ## 什么是 Algolia

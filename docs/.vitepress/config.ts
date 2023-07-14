@@ -8,7 +8,11 @@ import { description, keywords, title, developerName, github } from "./meta";
 import MarkdownTransform from "./plugins/vite-plugin-md-transform";
 import { pwa } from "./scripts/pwa";
 import algolia from "./scripts/algolia";
-import { links, getSiteUrlLinks, generateSiteMap } from "./scripts/sitemap";
+import {
+  getSiteUrlLinks,
+  generateSiteMap,
+  generateTodaySitemapUrlLinks,
+} from "./scripts/sitemap";
 import sidebar from "./sidebar";
 
 // https://vitepress.dev/reference/site-config
@@ -146,7 +150,10 @@ export default withPwa(
       getSiteUrlLinks(id, ctx);
     },
     async buildEnd(siteConfig) {
+      // 生成sitemap.xml
       generateSiteMap(siteConfig);
+      // 生成today-sitemap.txt
+      generateTodaySitemapUrlLinks(siteConfig);
     },
   })
 );

@@ -1,3 +1,7 @@
+---
+sitemapTime: 2023/07/14
+---
+
 # VitePress 如何开启 PWA 功能
 
 VitePress 默认支持 PWA，但需要你自己配置一些内容。本文将介绍如何开启 PWA 功能。
