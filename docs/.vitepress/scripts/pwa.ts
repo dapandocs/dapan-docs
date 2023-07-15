@@ -3,7 +3,7 @@ import { resolve } from "path";
 import type { VitePWAOptions } from "vite-plugin-pwa";
 import { title, description } from "../meta";
 
-export const pwa: Partial<VitePWAOptions> = {
+const pwa: Partial<VitePWAOptions> = {
   // 根目录
   outDir: resolve(__dirname, "../../../dist"),
   registerType: "autoUpdate",
@@ -81,3 +81,4 @@ export const pwa: Partial<VitePWAOptions> = {
     ],
   },
 };
+export default pwa;

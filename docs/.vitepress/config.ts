@@ -4,21 +4,23 @@ import { withPwa } from "@vite-pwa/vitepress";
 import react from "@vitejs/plugin-react";
 import UnoCSS from "unocss/vite";
 import VueComponents from "unplugin-vue-components/vite";
-import { description, keywords, title, developerName, github } from "./meta";
 import MarkdownTransform from "./plugins/vite-plugin-md-transform";
-import { pwa } from "./scripts/pwa";
+import { description, title, github } from "./scripts/meta";
+import pwa from "./scripts/pwa";
 import algolia from "./scripts/algolia";
+import sidebar from "./scripts/sidebar";
+import head from "./scripts/head";
 import {
   getSiteUrlLinks,
   generateSiteMap,
-  generateTodaySitemapUrlLinks,
+  generateTodaySitemapTxtUrlLinks,
+  generateSitemapJsonUrlLinks,
 } from "./scripts/sitemap";
-import sidebar from "./sidebar";
+
 
 // https://vitepress.dev/reference/site-config
 export default withPwa(
   defineConfig({
-    pwa,
     title,
     // 与pwa的outDir保持一致
     outDir: resolve(__dirname, "../../dist"),
@@ -30,6 +32,8 @@ export default withPwa(
     markdown: {
       lineNumbers: true,
     },
+    pwa,
+    head,
     vite: {
       resolve: {
         alias: {
@@ -88,72 +92,16 @@ export default withPwa(
       },
       socialLinks: [{ icon: "github", link: github }],
     },
-    head: [
-      ["meta", { name: "referrer", content: "no-referrer-when-downgrade" }],
-      ["meta", { name: "keywords", content: keywords }],
-      ["meta", { name: "author", content: developerName }],
-      [
-        "meta",
-        {
-          name: "google-site-verification",
-          content: "8C08prB1osC3jsMbYZjmrkWEIM1zduj1OxedQjghNxs",
-        },
-      ],
-      [
-        "meta",
-        { name: "baidu-site-verification", content: "codeva-xf7u8GA3Wp" },
-      ],
-      [
-        "meta",
-        {
-          name: "360-site-verification",
-          content: "37fc981df313cb2376c89f6fded04cfc",
-        },
-      ],
-      [
-        "meta",
-        {
-          name: "msvalidate.01",
-          content: "95080530C3B969C7083402BB727761AA",
-        },
-      ],
-      ["meta", { property: "og:type", content: "article" }],
-      ["meta", { name: "application-name", content: developerName }],
-      ["meta", { name: "apple-mobile-web-app-title", content: developerName }],
-      [
-        "meta",
-        { name: "apple-mobile-web-app-status-bar-style", content: "default" },
-      ],
-      ["link", { rel: "shortcut icon", href: "/logo.svg" }],
-      ["link", { rel: "icon", type: "image/x-icon", href: "/logo.svg" }],
-      // webfont
-      ["link", { rel: "dns-prefetch", href: "https://fonts.googleapis.com" }],
-      ["link", { rel: "dns-prefetch", href: "https://fonts.gstatic.com" }],
-      [
-        "link",
-        {
-          rel: "preconnect",
-          crossorigin: "anonymous",
-          href: "https://fonts.googleapis.com",
-        },
-      ],
-      [
-        "link",
-        {
-          rel: "preconnect",
-          crossorigin: "anonymous",
-          href: "https://fonts.gstatic.com",
-        },
-      ],
-    ],
     transformHtml: (_, id, ctx) => {
       getSiteUrlLinks(id, ctx);
     },
     async buildEnd(siteConfig) {
       // 生成sitemap.xml
       generateSiteMap(siteConfig);
+      // 生成sitemap.json
+      generateSitemapJsonUrlLinks(siteConfig);
       // 生成today-sitemap.txt
-      generateTodaySitemapUrlLinks(siteConfig);
+      generateTodaySitemapTxtUrlLinks(siteConfig);
     },
   })
 );

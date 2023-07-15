@@ -11,7 +11,19 @@ export const links: {
 }[] = [];
 export const hostname = "https://www.skillgroup.cn/";
 
-export const generateTodaySitemapUrlLinks = (siteConfig: SiteConfig) => {
+export const generateSitemapJsonUrlLinks = (siteConfig: SiteConfig) => {
+  const writeStream = createWriteStream(
+    resolve(siteConfig.outDir, "sitemap.json")
+  );
+  const filteredLinks = links.filter((link) => link.url !== "index.html");
+  writeStream.write(JSON.stringify(filteredLinks));
+  writeStream.end();
+  writeStream.on("finish", () => {
+    console.log("today-sitemap.json generate finished.");
+  });
+};
+
+export const generateTodaySitemapTxtUrlLinks = (siteConfig: SiteConfig) => {
   const writeStream = createWriteStream(
     resolve(siteConfig.outDir, "today-sitemap.txt")
   );
@@ -31,7 +43,7 @@ export const generateTodaySitemapUrlLinks = (siteConfig: SiteConfig) => {
     }
   }
   writeStream.on("finish", () => {
-    console.log("today-sitemap generate finished.");
+    console.log("today-sitemap.txt generate finished.");
   });
 };
 
