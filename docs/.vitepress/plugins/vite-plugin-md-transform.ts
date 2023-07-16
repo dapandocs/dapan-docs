@@ -24,6 +24,9 @@ function vitePluginMdTransform(): Plugin {
       // 排除 docs/index.md 文件
       if (_name === "docs" && i === "index.md") return code;
 
+      // 排除 system 目录下的所有文件
+      if (_name === "system") return code;
+
       // 供博客直达小助手使用
       // code = code.replace(
       //   /\((\/[^)]+\.(png|svg|jpg))\)/g,

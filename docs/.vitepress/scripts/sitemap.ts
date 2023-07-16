@@ -59,11 +59,13 @@ export const getSiteUrlLinks = (id: string, { pageData }: TransformContext) => {
     const url = relativePath
       .replace(/\/index\.md$/, "/index.html")
       .replace(/\.md$/, ".html");
-    links.push({
-      url,
-      lastmod: lastUpdated,
-      sitemapTime: frontmatter.sitemapTime,
-    });
+    if (!url.includes("system")) {
+      links.push({
+        url,
+        lastmod: lastUpdated,
+        sitemapTime: frontmatter.sitemapTime,
+      });
+    }
   }
 
   return links;

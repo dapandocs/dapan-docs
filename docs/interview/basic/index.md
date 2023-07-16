@@ -12,7 +12,7 @@ contributors: ["ixahmedxi"]
 
 
 ### Vue 组件
-<vue-click-button />
+<VueClickButton />
 
 <script setup>
 import { ref } from 'vue'

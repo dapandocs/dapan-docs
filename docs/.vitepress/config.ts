@@ -17,7 +17,6 @@ import {
   generateSitemapJsonUrlLinks,
 } from "./scripts/sitemap";
 
-
 // https://vitepress.dev/reference/site-config
 export default withPwa(
   defineConfig({
@@ -37,8 +36,9 @@ export default withPwa(
     vite: {
       resolve: {
         alias: {
-          "@components": "/components",
-          "@vitepress": "/.vitepress",
+          "@components": resolve(__dirname, "../components"),
+          "@docs": resolve(__dirname, "../"),
+          "@vitepress": resolve(__dirname, "../.vitepress"),
         },
       },
       plugins: [
@@ -52,6 +52,15 @@ export default withPwa(
           transformer: "vue3",
         }),
       ],
+      server: {
+        proxy: {
+          "/api": {
+            target: "https://www.skillgroup.cn",
+            changeOrigin: true,
+            rewrite: (path) => path.replace(/^\/api/, ""),
+          },
+        },
+      },
     },
     locales: {
       root: { label: "简体中文", lang: "zh-CN" },

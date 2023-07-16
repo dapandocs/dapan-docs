@@ -14,13 +14,11 @@
     "lib": ["ESNext", "DOM"],
     "baseUrl": ".",
     "paths": {
-      "@vitepress": ["docs/.vitepress/*"],
-      "@components": ["docs/components/*"],
+      "@vitepress/*": ["docs/.vitepress/*"],
+      "@components/*": ["docs/components/*"],
+      "@docs/*": ["docs/*"]
     }
   },
-  "include": [
-    "docs",
-    "docs/.vitepress/*.ts"
-  ],
+  "include": ["docs", "docs/.vitepress/*.ts"],
   "exclude": ["**/node_modules/**", "**/dist/**"]
 }
