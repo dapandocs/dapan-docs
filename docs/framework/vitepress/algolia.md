@@ -1,5 +1,5 @@
 ---
-sitemapTime: 2023/07/14
+sitemapTime: 2023/07/17
 ---
 
 # VitePress 如何开启 algolia 搜索功能
@@ -23,15 +23,15 @@ Algolia 是一种强大的搜索引擎，可以为你的 VitePress 网站提供�
 
 注册成功后，你会收到一封邮件，里面包含了你的 Algolia API Key 和 Application ID。如下界面：
 
-![](/images/vitepress/algolia-1.png)
+![Algolia DocSearch 注册成功界面](/images/vitepress/algolia-1.png)
 
 根据邮箱提示操作后，你会看到如下界面：
 
-![](/images/vitepress/algolia-2.png)
+![Algolia DocSearch 首页界面](/images/vitepress/algolia-2.png)
 
 点击 “API Keys”, 获取你的 Algolia API Key 和 Application ID。如下界面：
 
-![](/images/vitepress/algolia-3.png)
+![Algolia DocSearch 密钥界面](/images/vitepress/algolia-3.png)
 
 ## Algolia 配置
 
@@ -66,11 +66,11 @@ export default defineConfig({
 
 ### 1. 搜索结果为空
 
-![](/images/vitepress/algolia-4.png)
+![Algolia DocSearch 控制台](/images/vitepress/algolia-4.png)
 
 先检查 Algolia 后台是否已经爬取了数据，如果没有爬取数据，你可以手动触发爬取数据。 [Algolia Crawler 控制台](https://crawler.algolia.com/admin)，如下图：
 
-![](/images/vitepress/algolia-5.png)
+![Algolia DocSearch 抓取数据](/images/vitepress/algolia-5.png)
 
 如果爬取数据后，Algolia 后台有数据，但是在 VitePress 却仍然搜索不到任何数据。
 
@@ -100,7 +100,7 @@ searchParameters: {
 
 即使手动配置了上述参数，也会搜索不到数据。原因如下：
 
-![](/images/vitepress/algolia-6.png)
+![Algolia DocSearch 抓取规则界面](/images/vitepress/algolia-6.png)
 
 Algolia 后台的数据是以 `lang:en-US` 的形式存储的，而 VitePress 搜索的时候是以 `lang:zh-CN` 的形式搜索的，所以 Algolia 后台没有对应的数据，所以搜索不到数据。
 
@@ -108,7 +108,7 @@ Algolia 后台的数据是以 `lang:en-US` 的形式存储的，而 VitePress �
 
 更改 Algolia 后台爬取数据规则， `lang:en-US` 改为 `lang:zh-CN`。在[Algolia Crawler 控制台](https://crawler.algolia.com/admin)，点击“Editor”，调整代码，如下图：
 
-![](/images/vitepress/algolia-7.png)
+![Algolia DocSearch 抓取规则界面](/images/vitepress/algolia-7.png)
 
 ```js
 const records = helpers.docsearch({

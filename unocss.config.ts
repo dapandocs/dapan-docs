@@ -5,13 +5,13 @@ import {
   presetUno,
   transformerDirectives,
   transformerVariantGroup,
-} from 'unocss'
+} from "unocss";
 
 export default defineConfig({
   shortcuts: {
-    'border-main': 'border-gray-400 border-opacity-30',
-    'bg-main': 'bg-gray-400',
-    'bg-base': 'bg-white dark:bg-hex-1a1a1a',
+    "border-main": "border-gray-400 border-opacity-30",
+    "bg-main": "bg-gray-400",
+    "bg-base": "bg-white dark:bg-hex-1a1a1a",
   },
   presets: [
     presetUno(),
@@ -23,14 +23,11 @@ export default defineConfig({
   ],
   theme: {
     colors: {
-      primary: 'var(--vp-c-brand)',
+      primary: "var(--vp-c-brand)",
     },
     fontFamily: {
-      mono: 'var(--vt-font-family-mono)',
+      mono: "var(--vt-font-family-mono)",
     },
   },
-  transformers: [
-    transformerDirectives(),
-    transformerVariantGroup(),
-  ],
-})
+  transformers: [transformerDirectives(), transformerVariantGroup()],
+});

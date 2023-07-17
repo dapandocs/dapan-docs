@@ -38,7 +38,7 @@ request.interceptors.request.use(
 // 响应拦截器
 request.interceptors.response.use(
   (response: AxiosResponse) => {
-    return response.data;
+    return response;
   },
   (error: any) => {
     // 集成全局错误处理

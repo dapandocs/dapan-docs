@@ -23,5 +23,8 @@ export async function queryBingBatchCommit(data: {
   return request(`/bing-api/indexnow`, {
     method: "POST",
     data,
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+    },
   });
 }

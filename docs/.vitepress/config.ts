@@ -59,6 +59,11 @@ export default withPwa(
             changeOrigin: true,
             rewrite: (path) => path.replace(/^\/api/, ""),
           },
+          "/bing-api": {
+            target: "https://www.bing.com",
+            changeOrigin: true,
+            rewrite: (path) => path.replace(/^\/bing-api/, ""),
+          },
         },
       },
     },
