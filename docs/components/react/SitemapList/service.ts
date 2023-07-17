@@ -28,22 +28,3 @@ export async function queryBingBatchCommit(data: {
     },
   });
 }
-
-/**
- * bing批量提交 -- vercel
- * @returns
- */
-export async function queryBingBatchVercelCommit(data: {
-  host: string;
-  key: string;
-  keyLocation: string;
-  urlList: React.Key[];
-}) {
-  return request(`/bing-api/indexnow`, {
-    method: "POST",
-    data,
-    headers: {
-      "Content-Type": "application/json; charset=utf-8",
-    },
-  });
-}

@@ -9,7 +9,6 @@ import { useSetState, useMount } from "ahooks";
 import {
   querySitemapUrlList,
   queryBingBatchCommit,
-  queryBingBatchVercelCommit,
 } from "./service";
 
 type SitemapList = {
@@ -123,37 +122,6 @@ function UrlColumnTable() {
     }
   };
 
-  // Bing Search Commit Vercel
-  const bingSearchVercelCommit = async () => {
-    setState({ submitLoading: true });
-    const reponse = await queryBingBatchCommit({
-      host: "https://dapandocs.vercel.app",
-      key: "4bd8b80634e143069572617c9440363e",
-      keyLocation:
-        "https://dapandocs.vercel.app/4bd8b80634e143069572617c9440363e.txt",
-      urlList: selectedUrlKeys,
-    });
-    if (reponse.status === 200) {
-      message.success(
-        <span>
-          <span>Vercel站点操作成功</span>
-          <a
-            m="l-6"
-            text="blue"
-            href="https://www.bing.com/webmasters/indexnow?siteUrl=https://dapandocs.vercel.app/"
-            target="_blank"
-          >
-            去查看
-          </a>
-        </span>,
-        4
-      );
-      setState({ selectedUrlKeys: [], submitLoading: false });
-    } else {
-      setState({ submitLoading: false });
-    }
-  };
-
   return (
     <div bg="white" m="12" p="8" lg:m="36" border="rounded-[12px]">
       <div font="bold" m="b-12 t-12 l-8" text="18 dark">
@@ -162,10 +130,7 @@ function UrlColumnTable() {
       <div m="b-12 l-8">
         <Button
           type="primary"
-          onClick={() => {
-            // bingSearchCommit();
-            bingSearchVercelCommit();
-          }}
+          onClick={bingSearchCommit}
           loading={submitLoading}
           disabled={selectedUrlKeys.length === 0}
         >
