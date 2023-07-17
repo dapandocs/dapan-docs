@@ -24,6 +24,10 @@ const request = axios.create();
 request.interceptors.request.use(
   // @ts-ignore
   (config: AxiosRequestConfig) => {
+    const { url } = config;
+    if (url?.includes("/api/") && process.env.NODE_ENV === "production") {
+      Object.assign(config, { url: url.replace("/api/", "/") });
+    }
     return config;
   },
   (error: Error) => {
