@@ -9,3 +9,19 @@ const prefex = "/api";
 export async function querySitemapUrlList() {
   return request(`${prefex}/sitemap.json`);
 }
+
+/**
+ * bing批量提交
+ * @returns
+ */
+export async function queryBingBatchCommit(data: {
+  host: string;
+  key: string;
+  keyLocation: string;
+  urlList: React.Key[];
+}) {
+  return request(`https://www.bing.com/indexnow`, {
+    method: "POST",
+    data,
+  });
+}
