@@ -20,7 +20,7 @@ export async function queryBingBatchCommit(data: {
   keyLocation: string;
   urlList: React.Key[];
 }) {
-  return request(`https://www.bing.com/indexnow`, {
+  return request(`/bing-api/indexnow`, {
     method: "POST",
     data,
   });

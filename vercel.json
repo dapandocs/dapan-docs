@@ -1,0 +1,8 @@
+{
+    "rewrites": [
+      {
+        "source": "/bing-api/:path*",
+        "destination": "https://www.bing.com/:path*"
+      }
+    ]
+  }
