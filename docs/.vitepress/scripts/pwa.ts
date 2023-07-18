@@ -1,7 +1,7 @@
 // https://vite-pwa-org.netlify.app/
 import { resolve } from "path";
 import type { VitePWAOptions } from "vite-plugin-pwa";
-import { title, description } from "../meta";
+import { title, description } from "./meta";
 
 const pwa: Partial<VitePWAOptions> = {
   // 根目录

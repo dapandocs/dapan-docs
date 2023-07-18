@@ -5,6 +5,7 @@ export default {
       collapsed: false,
       items: [
         { text: "简述", link: "/framework/react/" },
+        { text: "代码分割（Code Splitting）", link: "/framework/react/code-splitting" },
       ],
     },
   ],
