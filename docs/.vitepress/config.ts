@@ -64,6 +64,11 @@ export default withPwa(
             changeOrigin: true,
             rewrite: (path) => path.replace(/^\/bing-api/, ""),
           },
+          "/baidu-api": {
+            target: "http://data.zz.baidu.com",
+            changeOrigin: true,
+            rewrite: (path) => path.replace(/^\/baidu-api/, ""),
+          },
         },
       },
     },

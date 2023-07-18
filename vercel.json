@@ -3,6 +3,10 @@
       {
         "source": "/bing-api/:path*",
         "destination": "https://www.bing.com/:path*"
+      },
+      {
+        "source": "/baidu-api/:path*",
+        "destination": "http://data.zz.baidu.com/:path*"
       }
     ]
   }

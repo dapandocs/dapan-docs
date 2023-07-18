@@ -28,3 +28,17 @@ export async function queryBingBatchCommit(data: {
     },
   });
 }
+
+/**
+ * 百度批量提交
+ * @returns
+ */
+export async function queryBaiduBatchCommit(data: string) {
+  return request(`/baidu-api/urls?site=https://www.skillgroup.cn&token=JPvezcuHh7M2JrGC`, {
+    method: "POST",
+    data,
+    headers: {
+      "Content-Type": " text/plain",
+    },
+  });
+}

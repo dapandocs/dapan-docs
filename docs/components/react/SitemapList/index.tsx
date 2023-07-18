@@ -9,6 +9,7 @@ import { useSetState, useMount } from "ahooks";
 import {
   querySitemapUrlList,
   queryBingBatchCommit,
+  queryBaiduBatchCommit,
 } from "./service";
 
 type SitemapList = {
@@ -91,6 +92,31 @@ function UrlColumnTable() {
     },
   };
 
+  // Baidu Search Commit
+  const baiduSearchCommit = async () => {
+    setState({ submitLoading: true });
+    const reponse = await queryBaiduBatchCommit(selectedUrlKeys.join("\n"));
+    if (reponse.status === 200) {
+      message.success(
+        <span>
+          <span>操作成功</span>
+          <a
+            m="l-6"
+            text="blue"
+            href="https://www.bing.com/webmasters/indexnow?siteUrl=https://www.skillgroup.cn/"
+            target="_blank"
+          >
+            去查看
+          </a>
+        </span>,
+        4
+      );
+      setState({ selectedUrlKeys: [], submitLoading: false });
+    } else {
+      setState({ submitLoading: false });
+    }
+  };
+
   // Bing Search Commit
   const bingSearchCommit = async () => {
     setState({ submitLoading: true });
@@ -135,6 +161,15 @@ function UrlColumnTable() {
           disabled={selectedUrlKeys.length === 0}
         >
           Bing
+        </Button>
+        <Button
+          className="m-l-12"
+          type="primary"
+          onClick={baiduSearchCommit}
+          loading={submitLoading}
+          disabled={selectedUrlKeys.length === 0}
+        >
+          百 度
         </Button>
       </div>
       <Table
