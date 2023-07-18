@@ -34,8 +34,8 @@ const head: HeadConfig[] = [
     "meta",
     { name: "apple-mobile-web-app-status-bar-style", content: "default" },
   ],
-  ["link", { rel: "shortcut icon", href: "/logo.svg" }],
-  ["link", { rel: "icon", type: "image/x-icon", href: "/logo.svg" }],
+  ["link", { rel: "shortcut icon", href: "/favicon.ico" }],
+  ["link", { rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   // webfont
   ["link", { rel: "dns-prefetch", href: "https://fonts.googleapis.com" }],
   ["link", { rel: "dns-prefetch", href: "https://fonts.gstatic.com" }],
