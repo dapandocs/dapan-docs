@@ -1,3 +1,6 @@
+import { resolve } from "node:path";
+import { createWriteStream } from "node:fs";
+
 /**
  * 字符替换
  * @param code
@@ -38,3 +41,16 @@ export function getNoSSRComponents(components: string[]) {
     return pre + `<ClientOnly><${component}/></ClientOnly>\n`;
   }, "");
 }
+
+/**
+ * 生成txt文本
+ * @param siteConfig
+ */
+export const generateTxt = (content: any, fileName: string) => {
+  const writeStream = createWriteStream(resolve(__dirname, `../../../dist/${fileName}.txt`));
+  writeStream.write(content);
+  writeStream.end();
+  writeStream.on("finish", () => {
+    console.log(`${fileName}.txt generate finished.`);
+  });
+};

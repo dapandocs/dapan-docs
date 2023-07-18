@@ -1,5 +1,5 @@
 import type { Plugin } from "vite";
-import { replacer, getNoSSRComponents } from "../scripts/utils";
+import { replacer, getNoSSRComponents, generateTxt } from "../scripts/utils";
 
 async function getMarkdownComponents() {
   const footer = `## 贡献者\n${getNoSSRComponents([
@@ -32,7 +32,7 @@ function vitePluginMdTransform(): Plugin {
       //   /\((\/[^)]+\.(png|svg|jpg))\)/g,
       //   "(https://skillgroup.cn$1)"
       // );
-      // console.log(code);
+      // generateTxt(code, "markdown");
 
       const { footer } = await getMarkdownComponents();
       // 追加 Footer 组件
