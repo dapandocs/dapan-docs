@@ -9,9 +9,7 @@
 ### 1. vite 创建 react 项目
 
 ```bash
-npm init vite@latest
-或者
-yarn create vite
+yarn create vite react-debugger --template react
 ```
 
 ### 2. 下载 react 最新源码
