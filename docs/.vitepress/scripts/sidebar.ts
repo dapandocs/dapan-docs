@@ -31,4 +31,15 @@ export default {
       ],
     },
   ],
+  "/column/javascript/": [
+    {
+      text: "JavaScript",
+      collapsed: false,
+      items: [
+        { text: "简述", link: "/column/javascript/" },
+        { text: "Promise", link: "/column/javascript/promise" },
+        { text: "async/await", link: "/column/javascript/async-await" },
+      ],
+    },
+  ],
 };

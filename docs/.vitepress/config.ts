@@ -93,6 +93,12 @@ export default withPwa(
             { text: "UnoCSS", link: "/framework/unocss/" },
           ],
         },
+        {
+          text: "🌵专 栏",
+          items: [
+            { text: "javascript", link: "/column/javascript/" },
+          ],
+        },
       ],
       logo: "/logo.svg",
       lastUpdatedText: "最后一次更新于",

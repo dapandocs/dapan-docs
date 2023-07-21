@@ -23,14 +23,22 @@ function SitemapList() {
     sitemapList: SitemapList[];
     sitemapLoading: boolean;
     selectedUrlKeys: React.Key[];
-    submitLoading?: boolean;
+    bingSubmitLoading?: boolean;
+    baiduSubmitLoading?: boolean;
   }>({
     sitemapList: [],
     sitemapLoading: false,
     selectedUrlKeys: [],
-    submitLoading: false,
+    bingSubmitLoading: false,
+    baiduSubmitLoading: false,
   });
-  const { sitemapList, sitemapLoading, selectedUrlKeys, submitLoading } = state;
+  const {
+    sitemapList,
+    sitemapLoading,
+    selectedUrlKeys,
+    bingSubmitLoading,
+    baiduSubmitLoading,
+  } = state;
 
   const fetchSitemapUrlList = async () => {
     setState({ sitemapLoading: true });
@@ -94,32 +102,19 @@ function SitemapList() {
 
   // Baidu Search Commit
   const baiduSearchCommit = async () => {
-    setState({ submitLoading: true });
+    setState({ baiduSubmitLoading: true });
     const reponse = await queryBaiduBatchCommit(selectedUrlKeys.join("\n"));
     if (reponse.status === 200) {
-      message.success(
-        <span>
-          <span>操作成功</span>
-          <a
-            m="l-6"
-            text="blue"
-            href="https://www.bing.com/webmasters/indexnow?siteUrl=https://www.skillgroup.cn/"
-            target="_blank"
-          >
-            去查看
-          </a>
-        </span>,
-        4
-      );
-      setState({ selectedUrlKeys: [], submitLoading: false });
+      message.success("操作成功", 4);
+      setState({ selectedUrlKeys: [], baiduSubmitLoading: false });
     } else {
-      setState({ submitLoading: false });
+      setState({ baiduSubmitLoading: false });
     }
   };
 
   // Bing Search Commit
   const bingSearchCommit = async () => {
-    setState({ submitLoading: true });
+    setState({ bingSubmitLoading: true });
     const reponse = await queryBingBatchCommit({
       host: "https://www.skillgroup.cn",
       key: "73f89fc2fa4646d1a4ab18b23108bf26",
@@ -142,9 +137,9 @@ function SitemapList() {
         </span>,
         4
       );
-      setState({ selectedUrlKeys: [], submitLoading: false });
+      setState({ selectedUrlKeys: [], bingSubmitLoading: false });
     } else {
-      setState({ submitLoading: false });
+      setState({ bingSubmitLoading: false });
     }
   };
 
@@ -157,7 +152,7 @@ function SitemapList() {
         <Button
           type="primary"
           onClick={bingSearchCommit}
-          loading={submitLoading}
+          loading={bingSubmitLoading}
           disabled={selectedUrlKeys.length === 0}
         >
           Bing
@@ -166,7 +161,7 @@ function SitemapList() {
           className="m-l-12"
           type="primary"
           onClick={baiduSearchCommit}
-          loading={submitLoading}
+          loading={baiduSubmitLoading}
           disabled={selectedUrlKeys.length === 0}
         >
           百 度
