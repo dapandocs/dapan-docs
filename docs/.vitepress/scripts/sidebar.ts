@@ -5,9 +5,28 @@ export default {
       collapsed: false,
       items: [
         { text: "简述", link: "/framework/react/" },
-        { text: "代码分割（Code Splitting）", link: "/framework/react/code-splitting" },
-        { text: "React Debugger 源码分析配置", link: "/framework/react/react-debugger" },
-        { text: "VSCode Debugger 用法", link: "/framework/react/vscode-debugger" },
+        {
+          text: "代码分割（Code Splitting）",
+          link: "/framework/react/code-splitting",
+        },
+        {
+          text: "VSCode Debugger 用法",
+          link: "/framework/react/vscode-debugger",
+        },
+        {
+          text: "React18 源码解析系列",
+          collapsed: false,
+          items: [
+            {
+              text: "React Debug 配置",
+              link: "/framework/react/scanalysis/react-debugger",
+            },
+            {
+              text: "createRoot 相关",
+              link: "/framework/react/scanalysis/create-root",
+            },
+          ],
+        },
       ],
     },
   ],
@@ -26,9 +45,7 @@ export default {
     {
       text: "UnoCSS",
       collapsed: false,
-      items: [
-        { text: "简述", link: "/framework/unocss/" },
-      ],
+      items: [{ text: "简述", link: "/framework/unocss/" }],
     },
   ],
   "/column/javascript/": [
