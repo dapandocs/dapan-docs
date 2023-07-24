@@ -1,6 +1,33 @@
 import type { Plugin } from "vite";
 import { replacer, getNoSSRComponents, generateTxt } from "../scripts/utils";
 
+/**
+ * 供博客直达小助手使用
+ * @param code
+ * @param id
+ */
+const generateCurrentMarkdown = (code: string, id: string) => {
+  code = code.replace(
+    /\((\/[^)]+\.(png|svg|jpg))\)/g,
+    "(https://skillgroup.cn$1)"
+  );
+
+  // 匹配一级标题
+  const headingMatch = code.match(/^#\s(.+)/);
+  const heading = headingMatch ? headingMatch[1] : "";
+
+  // 匹配路径地址
+  const pathMatch = id.match(/\/docs(.*?)\.md/);
+  const path = pathMatch ? `https://skillgroup.cn${pathMatch[1]}.html` : "";
+
+  code = code.replace(
+    heading,
+    `${heading}\n\n- [原文地址--DapanDocs](${path})：${path}`
+  );
+
+  generateTxt(code, "markdown");
+};
+
 async function getMarkdownComponents() {
   const footer = `## 贡献者\n${getNoSSRComponents([
     "Contributors",
@@ -27,12 +54,9 @@ function vitePluginMdTransform(): Plugin {
       // 排除 system 目录下的所有文件
       if (_name === "system") return code;
 
-      // 供博客直达小助手使用
-      // code = code.replace(
-      //   /\((\/[^)]+\.(png|svg|jpg))\)/g,
-      //   "(https://skillgroup.cn$1)"
-      // );
-      // generateTxt(code, "markdown");
+      if (process.env.NODE_ENV === "development") {
+        generateCurrentMarkdown(code, id);
+      }
 
       const { footer } = await getMarkdownComponents();
       // 追加 Footer 组件
