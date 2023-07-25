@@ -67,6 +67,32 @@ export default defineConfig({
 });
 ```
 
+如果要设置`__DEV__`为 false，需要调整以下代码：
+
+```js
+// src/react/packages/react/src/jsx/ReactJSX.js
+// 修改后
+
+import { REACT_FRAGMENT_TYPE } from "shared/ReactSymbols";
+import {
+  jsxWithValidationStatic,
+  jsxWithValidationDynamic,
+  jsxWithValidation,
+} from "./ReactJSXElementValidator";
+import { jsx as jsxProd } from "./ReactJSXElement";
+const jsx = __DEV__ ? jsxWithValidationDynamic : jsxProd;
+// we may want to special case jsxs internally to take advantage of static children.
+// for now we can ship identical prod functions
+const jsxs = __DEV__ ? jsxWithValidationStatic : jsxProd;
+// const jsxDEV      = __DEV__ ? jsxWithValidation : undefined; // 隐藏
+
+const jsxDEV = jsxProd; // 增加
+
+export { REACT_FRAGMENT_TYPE as Fragment, jsx, jsxs, jsxDEV };
+```
+
+如果需要配置未生效时，可以尝试删除node_modules/.vite文件夹，重新启动项目
+
 react 包移动完成后目录如下：
 ![react 目录](/images/react/1.png)
 
@@ -91,6 +117,7 @@ react 包移动完成后目录如下：
 ```
 
 ### 6. 开启 debugger
+
 ![debugger](/images/react/7.png)
 
 ```js
