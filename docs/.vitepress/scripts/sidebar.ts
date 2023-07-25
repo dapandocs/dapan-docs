@@ -22,6 +22,10 @@ export default {
               link: "/framework/react/scanalysis/react-debugger",
             },
             {
+              text: "React.createElement 和 jsx()",
+              link: "/framework/react/scanalysis/jsx",
+            },
+            {
               text: "createRoot 相关",
               link: "/framework/react/scanalysis/create-root",
             },

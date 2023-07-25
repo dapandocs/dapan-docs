@@ -27,29 +27,6 @@ export function createRoot(container, options) {
 
   // 处理传入的选项参数
   if (options !== null && options !== undefined) {
-    // 在开发环境下，如果使用了过时的 hydrate 选项，则发出警告
-    if (__DEV__) {
-      if (options.hydrate) {
-        console.warn(
-          "hydrate through createRoot is deprecated. Use ReactDOMClient.hydrateRoot(container, <App />) instead."
-        );
-      } else {
-        // 如果传入的选项是 JSX 元素，则发出错误
-        if (
-          typeof options === "object" &&
-          options !== null &&
-          options.$$typeof === REACT_ELEMENT_TYPE
-        ) {
-          console.error(
-            "You passed a JSX element to createRoot. You probably meant to " +
-              "call root.render instead. " +
-              "Example usage:\n\n" +
-              "  let root = createRoot(domContainer);\n" +
-              "  root.render(<App />);"
-          );
-        }
-      }
-    }
     // 处理严格模式选项
     if (options.unstable_strictMode === true) {
       isStrictMode = true;
@@ -295,17 +272,6 @@ function FiberRootNode(
     const pendingUpdatersLaneMap = (this.pendingUpdatersLaneMap = []); // 待处理的更新器的Lanes映射
     for (let i = 0; i < TotalLanes; i++) {
       pendingUpdatersLaneMap.push(new Set());
-    }
-  }
-
-  if (__DEV__) {
-    switch (tag) {
-      case ConcurrentRoot:
-        this._debugRootType = hydrate ? "hydrateRoot()" : "createRoot()"; // 调试用的根类型
-        break;
-      case LegacyRoot:
-        this._debugRootType = hydrate ? "hydrate()" : "render()"; // 调试用的根类型
-        break;
     }
   }
 }
