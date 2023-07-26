@@ -336,17 +336,19 @@ export function createHostRootFiber(
 
 - 配置组件的渲染环境：
   通过接收各种参数,createContainer 可以配置组件的渲染环境,比如:
-  ::: tip 配置组件的渲染环境
-  是否启用严格模式(isStrictMode)
 
-  默认是否开启并发更新(concurrentUpdatesByDefaultOverride)
+```
 
-  标识符前缀
+是否启用严格模式(isStrictMode)
 
-  错误恢复回调函数(onRecoverableError)
+默认是否开启并发更新(concurrentUpdatesByDefaultOverride)
 
-  过渡回调函数
-  :::
+标识符前缀
+
+错误恢复回调函数(onRecoverableError)
+
+过渡回调函数
+```
 
 - 构建 Fiber 树：最终通过调用 createFiberRoot 来构建 Fiber 树的根节点,Fiber 树是 React 内部实现组件渲染和更新的核心数据结构。
 
@@ -378,16 +380,16 @@ export function createHostRootFiber(
 
 - 标识和容器信息
 
-::: tip 标识和容器信息
+```
 
 tag：标识 React 根节点的类型，可以是 ConcurrentRoot（并发模式）或 LegacyRoot（传统模式）。
 
 containerInfo：表示 React 应用程序的容器信息，例如 DOM 元素或其他宿主环境的相关信息。
-:::
+```
 
 - 状态管理
 
-::: tip 状态管理
+```
 pendingChildren：存储待处理的子节点，即将被渲染到容器中的 React 元素。
 
 current：指向当前正在处理的工作单元，即正在进行中的渲染任务。
@@ -395,11 +397,11 @@ current：指向当前正在处理的工作单元，即正在进行中的渲染�
 inishedWork：指向已完成的工作单元，即已经完成的渲染任务。
 
 pingCache：用于缓存 Ping 操作的结果，以便在下一次渲染时进行快速判断。
-:::
+```
 
 - 调度和优先级
 
-::: tip 调度和优先级
+```
 pendingLanes：表示待处理的调度优先级（lanes），用于确定哪些任务应该被优先处理。
 
 suspendedLanes：表示暂停的调度优先级（lanes），用于标记已经被暂停的任务。
@@ -409,51 +411,53 @@ pingedLanes：表示已经进行了 Ping 操作的调度优先级（lanes），�
 expiredLanes：表示已过期的调度优先级（lanes），用于标记已经过期的任务。
 
 finishedLanes：表示已完成的调度优先级（lanes），用于标记已经完成的任务。
-:::
+```
 
 - 错误处理和恢复
 
-::: tip 错误处理和恢复
-errorRecoveryDisabledLanes：表示禁用错误恢复的调度优先级（lanes），用于标记禁用错误恢复的任务。
+```
+
+errorRecoveryDisabledLanes：表示禁用错误恢复的调度优先级（lanes），用于标记禁用错误恢复的任务。   
 
 onRecoverableError：可恢复错误发生时的回调函数。
-:::
+
+```
 
 - 上下文和标识符
 
-::: tip 上下文和标识符
+```
 context：当前的上下文对象。
 pendingContext：待处理的上下文对象。
 identifierPrefix：标识符的前缀，用于生成唯一的标识符。
-:::
+```
 
 - 缓存和悬挂
 
-::: tip 缓存和悬挂
+```
 
 pooledCache：用于缓存复用的 Fiber 节点。
 
 pooledCacheLanes：缓存池中的调度优先级（lanes）。
 
 shellSuspendCounter：用于跟踪 Shell 挂起的计数器。
-:::
+```
 
 - 关联和更新追踪
 
-::: tip 关联和更新追踪
+```
 
 entangledLanes：表示关联的调度优先级（lanes），用于标记关联的任务。
 
 entanglements：关联的调度优先级（lanes）的映射。
 
 hiddenUpdates：用于存储隐藏的更新。
-:::
+```
 
 - 调试和性能分析
 
-::: tip 调试和性能分析
+```
 
-\_debugRootType：用于调试目的的根类型。
+_debugRootType：用于调试目的的根类型。
 
 hydrationCallbacks：用于悬挂操作的回调函数。
 
@@ -468,7 +472,7 @@ passiveEffectDuration：记录被动效果（passive effect）的持续时间。
 memoizedUpdaters：存储记忆化的更新器。
 
 pendingUpdatersLaneMap：待处理的更新器的调度优先级（lanes）的映射。
-:::
+```
 
 ## React18 createHostRootFiber 函数作用
 
