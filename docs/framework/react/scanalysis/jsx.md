@@ -4,7 +4,7 @@
 
 [babel 官网](https://www.babeljs.cn/repl)，通过修改 React Runtime 参数，可以实时看到 React 17 版本之前和之后的 jsx 转换结果。
 
-如果使用 vite,可以配置 jsxRuntime
+如果使用vite,可以配置 jsxRuntime
 
 ```js
 import { defineConfig } from "vite";
@@ -84,7 +84,9 @@ _jsxs(
 两者的区别:
 
 - 导入方式不同：React 17 版本之前的代码中，直接使用 React.createElement 函数，而 React 17 版本之后的代码中，使用了 import 语句导入了 jsx 和 jsxs 函数进行元素的创建。所以，React 17 版本之后的代码中，不需要在代码中手动导入`import React from 'react'`了。
+
 - 参数顺序不同：React 17 版本之前的代码中，createElement 函数的参数顺序是 type, props, ...children，而 React 17 版本之后的代码中，jsx 和 jsxs 函数的参数顺序是 type, props, key。
+
 - 处理子元素方式不同：
   React 17 版本之前的代码中，子元素是作为 createElement 函数的后续参数传递的。例如：
 
@@ -224,11 +226,11 @@ export function jsx(type, config, maybeKey) {
   // 我们希望废弃key的传播，但作为中间步骤，除了<div {...props} key="Hi" />之外，我们将在其他情况下使用jsxDEV，
   // 因为我们目前无法确定key是否被显式声明为undefined。
   if (maybeKey !== undefined) {
-    key = "" + maybeKey;
+    key = '' + maybeKey;
   }
 
   if (hasValidKey(config)) {
-    key = "" + config.key;
+    key = '' + config.key;
   }
 
   if (hasValidRef(config)) {
@@ -262,9 +264,10 @@ export function jsx(type, config, maybeKey) {
     undefined,
     undefined,
     ReactCurrentOwner.current,
-    props
+    props,
   );
 }
+
 ```
 
 ```js [ReactElement]
@@ -286,7 +289,6 @@ function ReactElement(type, key, ref, self, source, owner, props) {
   return element;
 }
 ```
-
 :::
 
 从 React.createElement() 和 jsx() 的源码可以看出，最后都是调用了 ReactElement() 方法，创建 React 元素对象。
@@ -295,20 +297,19 @@ function ReactElement(type, key, ref, self, source, owner, props) {
 
 ```js
 // ReactJSX 源码
-import { REACT_FRAGMENT_TYPE } from "shared/ReactSymbols";
+import {REACT_FRAGMENT_TYPE} from 'shared/ReactSymbols';
 import {
   jsxWithValidationStatic,
   jsxWithValidationDynamic,
   jsxWithValidation,
-} from "./ReactJSXElementValidator";
-import { jsx as jsxProd } from "./ReactJSXElement";
-const jsx = __DEV__ ? jsxWithValidationDynamic : jsxProd;
+} from './ReactJSXElementValidator';
+import {jsx as jsxProd} from './ReactJSXElement';
+const jsx      = __DEV__ ? jsxWithValidationDynamic : jsxProd;
 // we may want to special case jsxs internally to take advantage of static children.
 // for now we can ship identical prod functions
-const jsxs = __DEV__ ? jsxWithValidationStatic : jsxProd;
-const jsxDEV = __DEV__ ? jsxWithValidation : undefined;
+const jsxs      = __DEV__ ? jsxWithValidationStatic : jsxProd;
+const jsxDEV      = __DEV__ ? jsxWithValidation : undefined;
 
-export { REACT_FRAGMENT_TYPE as Fragment, jsx, jsxs, jsxDEV };
+export {REACT_FRAGMENT_TYPE as Fragment, jsx, jsxs, jsxDEV};
 ```
-
 从源码分析得出，jsx 和 jsxs 函数都是调用了 ReactJSXElement 中的 jsx 函数。
