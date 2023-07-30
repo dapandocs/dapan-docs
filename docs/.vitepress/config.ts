@@ -88,7 +88,7 @@ export default withPwa(
         // https://vitepress.dev/reference/default-theme-config
         nav: [
           {
-            text: "🔥主流框架",
+            text: "🔥 主流框架",
             items: [
               { text: "React", link: "/framework/react/" },
               { text: "Vue", link: "/framework/vue/" },
@@ -97,8 +97,19 @@ export default withPwa(
             ],
           },
           {
-            text: "🌵专 栏",
+            text: "🌵 专 栏",
             items: [{ text: "javascript", link: "/column/javascript/" }],
+          },
+          {
+            text: "📔 小 记",
+            link: "/note/",
+          },
+          {
+            text: "🌐 站 点",
+            items: [
+              { text: "默认站点", link: "https://www.skillgroup.cn/" },
+              { text: "Vercel 站点", link: "https://dapandocs.vercel.app/" },
+            ],
           },
         ],
         logo: "/logo.svg",

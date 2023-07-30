@@ -63,4 +63,14 @@ export default {
       ],
     },
   ],
+  "/note/": [
+    {
+      text: "小 记",
+      collapsed: false,
+      items: [
+        { text: "简述", link: "/note/" },
+        { text: "Node 包管理器", link: "/note/package-manager" },
+      ],
+    },
+  ],
 };
