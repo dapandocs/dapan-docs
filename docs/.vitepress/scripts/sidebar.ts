@@ -14,6 +14,10 @@ export default {
           link: "/framework/react/vscode-debugger",
         },
         {
+          text: "React18 严格模式",
+          link: "/framework/react/strict-mode",
+        },
+        {
           text: "React18 源码解析系列",
           collapsed: false,
           items: [
