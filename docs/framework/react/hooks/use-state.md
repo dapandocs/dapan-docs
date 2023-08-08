@@ -248,6 +248,52 @@ function MyComponent() {
 
 因此，虽然 useState 可能在某些情况下表现得像是异步的，但这实际上是由于 React 的调度机制，而不是 useState 本身是异步的。
 
+## 利用 useState 封装自定义 Hook-useSetState
+
+```js
+import { useCallback, useState } from "react";
+
+/**
+ * 一个自定义 hook，提供 setState 功能，但与 class 组件中的 setState 类似，
+ * 它允许合并状态更新，而不是替换它。
+ *
+ * @param {Object} initialState - 初始状态，默认为空对象。
+ * @returns {Array} 返回一个数组，第一个元素是当前状态，第二个元素是合并状态的函数。
+ */
+const useSetState = (initialState = {}) => {
+  // 使用 useState hook 设置初始状态
+  const [state, setState] = useState(initialState);
+
+  // 定义一个合并状态的函数
+  const setMergeState = useCallback((patch) => {
+    setState((prevState) => ({
+      ...prevState, // 保留之前的状态
+      // 如果 patch 是一个函数，那么使用该函数返回的结果来更新状态，
+      // 否则直接使用 patch 对象来更新状态。
+      ...(typeof patch === "function" ? patch(prevState) : patch),
+    }));
+  }, []); // 使用空依赖数组，确保该回调函数不会重新创建
+
+  // 返回当前状态和合并状态的函数
+  return [state, setMergeState];
+};
+
+// 导出自定义 hook
+export default useSetState;
+```
+
+这个自定义 Hook `useSetState` 的好处主要有以下几点：
+
+1. **状态合并**：与类组件中的 `setState` 方法类似，`useSetState` 允许你合并状态，而不是完全替换它。这在处理复杂状态对象时特别有用，因为你可以只更新状态对象的某一部分，而不是每次都提供完整的新状态。
+
+2. **简化状态更新**：在使用原生的 `useState` Hook 时，如果你想合并状态，你需要手动做这个合并。而 `useSetState` 提供了一个更简洁的方法来实现这一点，使得代码更加整洁和易读。
+
+3. **函数式更新**：`useSetState` 支持传递一个函数作为参数，这个函数接受当前状态并返回要合并的新状态。这允许你基于当前状态来计算新的状态，这在处理依赖于当前状态的更新时非常有用。
+
+4. **更接近类组件的体验**：对于那些习惯于类组件的开发者来说，`useSetState` 提供了一个更熟悉的 API 来处理状态，这可能会使从类组件迁移到函数组件的过渡更加顺畅。
+
+总的来说，`useSetState` 提供了一个更加灵活和强大的方法来处理组件状态，特别是当你需要合并状态或基于当前状态来计算新的状态时。
+
 ## 调用 useState 后大致执行情况
 
 ```mermaid
@@ -270,8 +316,8 @@ L -->|完成更新| M[更新DOM]
 <script setup>
 import { ref } from 'vue'
 import renderReact from '@components/react/renderReact'
-import Basic from '@components/react/useState/Basic'
-import MultipleUpdates from '@components/react/useState/MultipleUpdates'
+import Basic from '@components/react/hooks/useState/Basic'
+import MultipleUpdates from '@components/react/hooks/useState/MultipleUpdates'
 
 const useState1 = ref(null)
 const useState2 = ref(null)

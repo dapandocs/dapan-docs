@@ -24,6 +24,7 @@
   "dependencies": {
     "@vite-pwa/vitepress": "^0.2.0",
     "@vitejs/plugin-react": "^4.0.1",
+    "lodash-es": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "unplugin-vue-components": "^0.25.1",

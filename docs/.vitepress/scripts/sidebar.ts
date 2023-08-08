@@ -13,6 +13,10 @@ export default {
               text: "useState",
               link: "/framework/react/hooks/use-state",
             },
+            {
+              text: "useEffect",
+              link: "/framework/react/hooks/use-effect",
+            },
           ],
         },
         {
