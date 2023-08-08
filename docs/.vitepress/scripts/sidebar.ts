@@ -6,12 +6,18 @@ export default {
       items: [
         { text: "简述", link: "/framework/react/" },
         {
-          text: "代码分割（Code Splitting）",
-          link: "/framework/react/code-splitting",
+          text: "React Hooks",
+          collapsed: false,
+          items: [
+            {
+              text: "useState",
+              link: "/framework/react/hooks/use-state",
+            },
+          ],
         },
         {
-          text: "VSCode Debugger 用法",
-          link: "/framework/react/vscode-debugger",
+          text: "代码分割（Code Splitting）",
+          link: "/framework/react/code-splitting",
         },
         {
           text: "React18 严格模式",
@@ -74,6 +80,10 @@ export default {
       items: [
         { text: "简述", link: "/note/" },
         { text: "Node 包管理器", link: "/note/package-manager" },
+        {
+          text: "VSCode Debugger 用法",
+          link: "/note/vscode-debugger",
+        },
       ],
     },
   ],
