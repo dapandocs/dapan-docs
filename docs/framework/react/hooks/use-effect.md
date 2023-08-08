@@ -248,7 +248,7 @@ userInfo 对象是在组件外部定义的，因此它的引用在组件的整�
 
 ```jsx [App.js]
 import { useState, useEffect } from "react";
-import { useDeepCompareEffect } from "ahooks";
+import useDeepCompareEffect from "./useDeepCompareEffect";
 import { message, Card, Button } from "antd";
 
 function App() {
