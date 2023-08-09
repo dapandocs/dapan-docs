@@ -40,7 +40,7 @@ export default withPwa(
         resolve: {
           alias: {
             "@components": resolve(__dirname, "../components"),
-            "@docs": resolve(__dirname, "../"),
+            "@": resolve(__dirname, "../"),
             "@vitepress": resolve(__dirname, "../.vitepress"),
           },
         },

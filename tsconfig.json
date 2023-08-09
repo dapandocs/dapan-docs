@@ -16,9 +16,9 @@
     "paths": {
       "@vitepress/*": ["docs/.vitepress/*"],
       "@components/*": ["docs/components/*"],
-      "@docs/*": ["docs/*"]
+      "@/*": ["docs/*"]
     }
   },
-  "include": ["docs", "docs/.vitepress/*.ts"],
+  "include": ["docs", "docs/.vitepress/*.ts", "docs/.vitepress/snippets/js.js"],
   "exclude": ["**/node_modules/**", "**/dist/**"]
 }

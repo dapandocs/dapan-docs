@@ -1,4 +1,4 @@
-import request from "@docs/utils/request";
+import request from "@/utils/request";
 
 const prefex = "/api";
 

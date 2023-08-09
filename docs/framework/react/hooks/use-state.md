@@ -55,44 +55,9 @@ const [key, setKey] = useState(() => {
 
 <div ref="useState1" />
 
-```jsx
-import { useState } from "react";
-import { Card, Button, Space } from "antd";
-
-const Counter = () => {
-  const [count, setCount] = useState(0);
-
-  // 方法一
-  function handleClick() {
-    setCount(count + 1);
-  }
-
-  // 方法二
-  function handleClickFn() {
-    setCount((prevCount) => {
-      return prevCount + 1;
-    });
-  }
-  return (
-    <Card>
-      <Space>
-        <div>Count: {count}</div>
-        <Button onClick={handleClick} type="primary">
-          count+1[方法一]
-        </Button>
-        <Button onClick={handleClickFn} type="primary">
-          count+1[方法二]
-        </Button>
-        <Button onClick={() => setCount(0)} type="primary">
-          重置
-        </Button>
-      </Space>
-    </Card>
-  );
-};
-
-export default Counter;
-```
+::: details demo 代码
+<<< @/components/react/hooks/useState/Basic.tsx
+:::
 
 这两种更新状态值的方式都是用于更新 `useState` 中的状态，但它们在某些情况下的行为是不同的。以下是它们之间的主要区别：
 
@@ -126,46 +91,9 @@ function handleClickFn() {
 
 <div ref="useState2" />
 
-```jsx
-import { useState } from "react";
-import { Card, Button, Space } from "antd";
-
-const Counter = () => {
-  const [count, setCount] = useState(0);
-
-  // 方法一
-  function handleMultipleUpdates() {
-    setCount(count + 1);
-    setCount(count + 1);
-    setCount(count + 1);
-  }
-
-  // 方法二
-  function handleMultipleUpdatesFn() {
-    setCount((prevCount) => prevCount + 1);
-    setCount((prevCount) => prevCount + 1);
-    setCount((prevCount) => prevCount + 1);
-  }
-  return (
-    <Card>
-      <Space>
-        <div>Count: {count}</div>
-        <Button onClick={handleMultipleUpdates} type="primary">
-          批量更新[方法一]
-        </Button>
-        <Button onClick={handleMultipleUpdatesFn} type="primary">
-          批量更新[方法二]
-        </Button>
-        <Button onClick={() => setCount(0)} type="primary">
-          重置
-        </Button>
-      </Space>
-    </Card>
-  );
-};
-
-export default Counter;
-```
+::: details demo 代码
+<<< @/components/react/hooks/useState/MultipleUpdates.tsx
+:::
 
 考虑以下代码：
 

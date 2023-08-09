@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { useDeepCompareEffect } from "ahooks";
-import { message, Card, Button } from "antd";
+// @ts-ignore
+import useDeepCompareEffect from "./useDeepCompareEffect";
+import { message, Card, Button, Space } from "antd";
 
 function App() {
   const [useInfo, setUserInfo] = useState({ name: "John", age: 25 });
@@ -25,12 +26,21 @@ function App() {
     setUserInfo({ ...useInfo });
   };
 
+  const handleChangeAge = () => {
+    setUserInfo({ ...useInfo, age: useInfo.age + 1 });
+  };
+
   return (
     <Card>
       <pre>{JSON.stringify(useInfo, null, 2)}</pre>
-      <Button onClick={handleChangeUserInfo} type="primary">
-        change userInfo
-      </Button>
+      <Space>
+        <Button onClick={handleChangeUserInfo} type="primary">
+          深拷贝useInfo
+        </Button>
+        <Button onClick={handleChangeAge} type="primary">
+          age+1
+        </Button>
+      </Space>
     </Card>
   );
 }

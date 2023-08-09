@@ -91,33 +91,9 @@ useEffect 的返回函数被称为“清除函数”（cleanup function）。这
 
 <div ref="useEffect4" />
 
-```jsx
-import { useState, useEffect } from "react";
-import { message, Card, Button } from "antd";
-
-function App() {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    message.info(`Effect for count: ${count}`);
-
-    return () => {
-      message.info(`Cleanup for count: ${count}`);
-    };
-  }, [count]);
-
-  return (
-    <Card>
-      <h3>Count: {count}</h3>
-      <Button onClick={() => setCount(count + 1)} type="primary">
-        change count
-      </Button>
-    </Card>
-  );
-}
-
-export default App;
-```
+::: details demo 代码
+<<< @/components/react/hooks/useEffect/CleanupFunction.tsx
+:::
 
 ### 1、组件卸载时执行清除函数
 
@@ -165,31 +141,9 @@ useEffect 的依赖项只会进行浅比较。这意味着它只比较依赖项�
 
 <div ref="useEffect1" />
 
-```js
-import { useState, useEffect } from "react";
-import { message } from "antd";
-
-function App() {
-  const [userInfo, setUserInfo] = useState({ name: "John", age: 25 });
-
-  useEffect(() => {
-    message.info("useEffect has run due to userInfo object reference change.");
-  }, [userInfo]);
-
-  const handleChangeUserInfo = () => {
-    setUserInfo({ ...userInfo });
-  };
-
-  return (
-    <div>
-      <pre>{JSON.stringify(userInfo, null, 2)}</pre>
-      <button onClick={handleChangeUserInfo}>change userInfo</button>
-    </div>
-  );
-}
-
-export default App;
-```
+::: details demo 代码
+<<< @/components/react/hooks/useEffect/ReferenceUnchanged.tsx
+:::
 
 这就是为什么当你将对象或数组作为 useEffect 的依赖项时，即使其内容没有变化，但只要引用发生了变化，useEffect 就会执行。
 
@@ -197,36 +151,9 @@ export default App;
 
 <div ref="useEffect2" />
 
-```js
-import { useState, useEffect } from "react";
-import { message, Card, Button } from "antd";
-
-const userInfo = { name: "John", age: 25 };
-
-function App() {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    message.info("useEffect has run due to userInfo object reference change.");
-  }, [userInfo]);
-
-  const handleChangeUserInfo = () => {
-    setCount(count + 1);
-    userInfo.age = userInfo.age + 1;
-  };
-
-  return (
-    <Card>
-      <h3>count: {count}</h3>
-      <Button onClick={handleChangeUserInfo} type="primary">
-        change userInfo
-      </Button>
-    </Card>
-  );
-}
-
-export default App;
-```
+::: details demo 代码
+<<< @/components/react/hooks/useEffect/ReferenceChanged.tsx
+:::
 
 在这个案例中，userInfo 对象的引用没有发生变化。
 
@@ -244,87 +171,10 @@ userInfo 对象是在组件外部定义的，因此它的引用在组件的整�
 
 <div ref="useEffect3" />
 
+::: details demo 代码
 ::: code-group
-
-```jsx [App.js]
-import { useState, useEffect } from "react";
-import useDeepCompareEffect from "./useDeepCompareEffect";
-import { message, Card, Button } from "antd";
-
-function App() {
-  const [useInfo, setUserInfo] = useState({ name: "John", age: 25 });
-
-  useEffect(() => {
-    message.info("useEffect has run due to userInfo object value change.");
-  }, [useInfo]);
-
-  useEffect(() => {
-    message.info(
-      "useEffect JSON.stringify has run due to userInfo object value change."
-    );
-  }, [JSON.stringify(useInfo)]);
-
-  useDeepCompareEffect(() => {
-    message.info(
-      "useDeepCompareEffect has run due to userInfo object value change."
-    );
-  }, [useInfo]);
-
-  const handleChangeUserInfo = () => {
-    setUserInfo({ ...useInfo });
-  };
-
-  return (
-    <Card>
-      <pre>{JSON.stringify(useInfo, null, 2)}</pre>
-      <Button onClick={handleChangeUserInfo} type="primary">
-        change userInfo
-      </Button>
-    </Card>
-  );
-}
-
-export default App;
-```
-
-```jsx [useDeepCompareEffect.js]
-// 导入必要的 hooks 和工具函数
-import { useEffect, useRef } from "react";
-import { isEqual } from "lodash-es";
-
-/**
- * 一个自定义 hook，模仿 useEffect 的行为，但在检查依赖项变化时使用深度比较
- * 而不是引用相等性。
- *
- * @param {Function} effect - 当依赖项发生变化时要运行的效果回调。
- * @param {Array} deps - 要监视变化的依赖项列表。
- */
-const useDeepCompareEffect = (effect, deps) => {
-  // 一个 ref 用于存储上一次的依赖项
-  const ref = useRef();
-
-  // 一个 ref 用于存储信号值。每当依赖项发生变化时，
-  // 该值都会增加，从而触发 useEffect。
-  const signalRef = useRef(0);
-
-  // 使用深度比较检查依赖项是否为 undefined 或是否已更改
-  if (deps === undefined || !isEqual(deps, ref.current)) {
-    // 更新存储的依赖项
-    ref.current = deps;
-    // 递增信号值
-    signalRef.current += 1;
-  }
-
-  // 使用标准的 useEffect hook，但依赖于信号值
-  // 这确保效果只在信号值变化时运行，
-  // 也就是在依赖项变化时。
-  useEffect(effect, [signalRef.current]);
-};
-
-// 导出自定义 hook
-export default useDeepCompareEffect;
-```
-
+<<< @/components/react/hooks/useEffect/DeepCompareEffect.tsx
+<<< @/components/react/hooks/useEffect/useDeepCompareEffect.js
 :::
 
 ## 调用 useEffect 后大致执行情况
