@@ -13,7 +13,7 @@ function App() {
   };
 
   return (
-    <Card>
+    <Card title="案例 demo">
       <pre>{JSON.stringify(userInfo, null, 2)}</pre>
       <Button onClick={handleChangeUserInfo} type="primary">change userInfo</Button>
     </Card>

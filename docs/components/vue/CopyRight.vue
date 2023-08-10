@@ -44,9 +44,19 @@ function getGithubLink(name: string) {
         </a>
       </span>
     </div>
-    <div m="t-8">
+    <!-- <div m="t-8">
       <span font="bold">合 作：</span>
-      <span>待定... </span>
-    </div>
+      <span>
+        <span
+          p="x-6 y-4"
+          text="12px"
+          bg="blue-4"
+          border="rounded-4"
+          cursor="pointer"
+        >
+          发文章
+        </span>
+      </span>
+    </div> -->
   </div>
 </template>

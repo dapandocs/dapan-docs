@@ -13,8 +13,8 @@ function App() {
   }, [count]);
 
   return (
-    <Card>
-      <h3>Count: {count}</h3>
+    <Card title="案例 demo">
+      <p>Count: {count}</p>
       <Button onClick={() => setCount(count + 1)} type="primary">
         change count
       </Button>

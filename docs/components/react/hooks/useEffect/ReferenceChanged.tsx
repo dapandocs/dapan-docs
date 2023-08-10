@@ -16,8 +16,8 @@ function App() {
   };
 
   return (
-    <Card>
-      <h3>count: {count}</h3>
+    <Card title="案例 demo">
+      <p>count: {count}</p>
       <Button onClick={handleChangeUserInfo} type="primary">
         change userInfo
       </Button>

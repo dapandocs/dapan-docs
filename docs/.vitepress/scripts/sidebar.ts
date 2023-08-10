@@ -17,6 +17,10 @@ export default {
               text: "useEffect",
               link: "/framework/react/hooks/use-effect",
             },
+            {
+              text: "useRef",
+              link: "/framework/react/hooks/use-ref",
+            },
           ],
         },
         {
