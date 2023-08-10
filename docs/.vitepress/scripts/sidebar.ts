@@ -21,6 +21,10 @@ export default {
               text: "useRef",
               link: "/framework/react/hooks/use-ref",
             },
+            {
+              text: "memo",
+              link: "/framework/react/hooks/memo",
+            },
           ],
         },
         {
