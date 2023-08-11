@@ -25,6 +25,14 @@ export default {
               text: "memo",
               link: "/framework/react/hooks/memo",
             },
+            {
+              text: "useMemo",
+              link: "/framework/react/hooks/use-memo",
+            },
+            {
+              text: "useCallback",
+              link: "/framework/react/hooks/use-callback",
+            },
           ],
         },
         {
