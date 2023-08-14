@@ -110,6 +110,29 @@ class Content extends React.Component {
 <<< @/components/react/hooks/useContext/NestedTheme.jsx
 :::
 
+## 调用 createContext、useContext 后大致执行情况
+
+```mermaid
+graph TD
+  A[调用createContext] --> B[执行createReactContext函数]
+  B --> C1[创建一个上下文对象]
+  C1 --> C2[初始化对象的属性 如 _currentValue]
+  C2 --> D[为上下文对象分配Provider和Consumer]
+  D --> E[设置Provider的_value属性]
+  E --> F[返回上下文对象]
+
+  G[调用useContext] --> H[执行readContext函数]
+  H --> I[获取当前的Fiber节点]
+  I --> J[检查Fiber节点是否有匹配的Provider]
+  J --> K{是否找到匹配的Provider?}
+  K --> L[是: 从Provider中获取值]
+  K --> M[否: 使用上下文的默认值]
+  L --> N[更新组件的state 触发重新渲染]
+  M --> N
+
+  N --> O[返回上下文值给组件]
+```
+
 <script setup>
 import { ref } from 'vue'
 import renderReact from '@components/react/renderReact'
