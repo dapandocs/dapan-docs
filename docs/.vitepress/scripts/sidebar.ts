@@ -33,6 +33,10 @@ export default {
               text: "useCallback",
               link: "/framework/react/hooks/use-callback",
             },
+            {
+              text: "useContext",
+              link: "/framework/react/hooks/use-context",
+            },
           ],
         },
         {
