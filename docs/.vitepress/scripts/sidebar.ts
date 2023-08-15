@@ -45,6 +45,10 @@ export default {
               text: "useImperativeHandle",
               link: "/framework/react/hooks/use-imperative-handle",
             },
+            {
+              text: "useDeferredValue",
+              link: "/framework/react/hooks/use-deferred-value",
+            },
           ],
         },
         {
