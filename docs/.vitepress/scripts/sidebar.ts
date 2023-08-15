@@ -37,6 +37,10 @@ export default {
               text: "useContext",
               link: "/framework/react/hooks/use-context",
             },
+            {
+              text: "forwardRef",
+              link: "/framework/react/hooks/forward-ref",
+            },
           ],
         },
         {
