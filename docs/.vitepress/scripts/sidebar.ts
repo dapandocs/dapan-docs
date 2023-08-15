@@ -41,6 +41,10 @@ export default {
               text: "forwardRef",
               link: "/framework/react/hooks/forward-ref",
             },
+            {
+              text: "useImperativeHandle",
+              link: "/framework/react/hooks/use-imperative-handle",
+            },
           ],
         },
         {
