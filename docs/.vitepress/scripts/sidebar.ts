@@ -60,6 +60,10 @@ export default {
           link: "/framework/react/code-splitting",
         },
         {
+          text: "JSX 语法",
+          link: "/framework/react/jsx",
+        },
+        {
           text: "React18 严格模式",
           link: "/framework/react/strict-mode",
         },
