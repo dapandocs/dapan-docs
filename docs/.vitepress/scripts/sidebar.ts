@@ -42,6 +42,10 @@ export default {
               link: "/framework/react/hooks/forward-ref",
             },
             {
+              text: "useReducer",
+              link: "/framework/react/hooks/use-reducer",
+            },
+            {
               text: "useImperativeHandle",
               link: "/framework/react/hooks/use-imperative-handle",
             },
