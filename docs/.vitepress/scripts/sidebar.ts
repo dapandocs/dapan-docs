@@ -64,6 +64,10 @@ export default {
           link: "/framework/react/code-splitting",
         },
         {
+          text: "React 生命周期",
+          link: "/framework/react/life-cycle",
+        },
+        {
           text: "React18 新特性",
           link: "/framework/react/new-features",
         },
