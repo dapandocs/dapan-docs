@@ -6,6 +6,10 @@ export default {
       items: [
         { text: "简述", link: "/framework/react/" },
         {
+          text: "JSX 语法",
+          link: "/framework/react/jsx",
+        },
+        {
           text: "React Hooks",
           collapsed: false,
           items: [
@@ -60,8 +64,8 @@ export default {
           link: "/framework/react/code-splitting",
         },
         {
-          text: "JSX 语法",
-          link: "/framework/react/jsx",
+          text: "React18 新特性",
+          link: "/framework/react/new-features",
         },
         {
           text: "React18 严格模式",
