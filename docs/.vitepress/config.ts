@@ -38,6 +38,13 @@ export default withPwa(
       head,
       mermaid: {},
       vite: {
+        ssr: {
+          noExternal: [
+            "ant-design-vue",
+            "@ant-design/icons-svg",
+            "@ant-design/icons-vue",
+          ],
+        },
         resolve: {
           alias: {
             "@components": resolve(__dirname, "../components"),

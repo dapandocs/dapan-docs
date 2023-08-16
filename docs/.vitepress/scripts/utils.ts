@@ -69,7 +69,7 @@ export const convertMdImageToAImage = (mdContent: string) => {
   // 使用正则表达式替换为 <a-image src="..." alt="..." /> 格式
   const convertedContent = mdContent.replace(
     regex,
-    '<Image src="$2" alt="$1" />'
+    '<ClientOnly><a-image src="$2" alt="$1" /></ClientOnly>'
   );
   return convertedContent;
 };
