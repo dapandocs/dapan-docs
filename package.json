@@ -14,6 +14,7 @@
     "@vite-pwa/vitepress": "^0.2.0",
     "@vitejs/plugin-react": "^4.0.1",
     "ahooks": "^3.7.8",
+    "ant-design-vue": "^4.0.0",
     "antd": "^5.7.0",
     "axios": "^1.4.0",
     "dayjs": "^1.11.9",

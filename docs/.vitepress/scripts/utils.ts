@@ -47,10 +47,29 @@ export function getNoSSRComponents(components: string[]) {
  * @param siteConfig
  */
 export const generateTxt = (content: any, fileName: string) => {
-  const writeStream = createWriteStream(resolve(__dirname, `../../../dist/${fileName}.txt`));
+  const writeStream = createWriteStream(
+    resolve(__dirname, `../../../dist/${fileName}.txt`)
+  );
   writeStream.write(content);
   writeStream.end();
   writeStream.on("finish", () => {
     console.log(`${fileName}.txt generate finished.`);
   });
+};
+
+/**
+ * 转化md图片为a-image
+ * @param mdContent
+ * @returns
+ */
+export const convertMdImageToAImage = (mdContent: string) => {
+  // 使用正则表达式匹配所有的 ![...](...) 格式的图片标签
+  const regex = /!\[(.*?)\]\((.*?)\)/g;
+
+  // 使用正则表达式替换为 <a-image src="..." alt="..." /> 格式
+  const convertedContent = mdContent.replace(
+    regex,
+    '<a-image src="$2" alt="$1" />'
+  );
+  return convertedContent;
 };

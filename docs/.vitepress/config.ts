@@ -5,6 +5,7 @@ import react from "@vitejs/plugin-react";
 import UnoCSS from "unocss/vite";
 import { withMermaid } from "vitepress-plugin-mermaid";
 import VueComponents from "unplugin-vue-components/vite";
+import { AntDesignVueResolver } from "unplugin-vue-components/resolvers";
 import MarkdownTransform from "./plugins/vite-plugin-md-transform";
 import { description, title, github } from "./scripts/meta";
 import pwa from "./scripts/pwa";
@@ -53,6 +54,11 @@ export default withPwa(
             include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
             dts: "./components/vue/components.d.ts",
             transformer: "vue3",
+            resolvers: [
+              AntDesignVueResolver({
+                importStyle: false, // css in js
+              }),
+            ],
           }),
         ],
         server: {

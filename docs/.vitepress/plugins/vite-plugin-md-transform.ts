@@ -1,5 +1,10 @@
 import type { Plugin } from "vite";
-import { replacer, getNoSSRComponents, generateTxt } from "../scripts/utils";
+import {
+  replacer,
+  getNoSSRComponents,
+  generateTxt,
+  convertMdImageToAImage,
+} from "../scripts/utils";
 
 /**
  * 供博客直达小助手使用
@@ -57,6 +62,9 @@ function vitePluginMdTransform(): Plugin {
       if (process.env.NODE_ENV === "development") {
         generateCurrentMarkdown(code, id);
       }
+
+      // 将 md 文件中的图片转换为 Image 组件
+      code = convertMdImageToAImage(code);
 
       const { footer } = await getMarkdownComponents();
       // 追加 Footer 组件
