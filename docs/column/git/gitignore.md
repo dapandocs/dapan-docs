@@ -66,10 +66,12 @@ temp/*.txt
 
 ### UmiJS
 
-```gitignore
+```
 # 编译输出
 /dist
 /.umi
+/src/.umi-production
+/src/.umi-test
 
 # 依赖文件夹
 /node_modules
@@ -102,7 +104,7 @@ pnpm-debug.log*
 
 ### Vite
 
-```gitignore
+```
 # 编译输出
 /dist
 /build

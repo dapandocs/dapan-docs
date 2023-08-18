@@ -141,11 +141,9 @@ export default {
       collapsed: false,
       items: [
         { text: "简述", link: "/note/" },
-        { text: "Node 包管理器", link: "/note/package-manager" },
-        {
-          text: "VSCode Debugger 用法",
-          link: "/note/vscode-debugger",
-        },
+        { text: "node 包管理器", link: "/note/package-manager" },
+        { text: "vscode debugger 用法", link: "/note/vscode-debugger" },
+        { text: "eslint、prettier 用法", link: "/note/eslint-prettier" },
       ],
     },
   ],
