@@ -47,7 +47,7 @@ temp/*.txt
    !important.log
    ```
 
-### 特殊情况和技巧
+## 特殊情况和技巧
 
 - **全局 `.gitignore` 文件**：你可以创建一个全局的 `.gitignore` 文件，适用于你的所有 Git 仓库。只需运行以下命令：
 
@@ -61,3 +61,77 @@ temp/*.txt
   ```
   git check-ignore -v somefile.txt
   ```
+
+## 模板
+
+### UmiJS
+
+```gitignore
+# 编译输出
+/dist
+/.umi
+
+# 依赖文件夹
+/node_modules
+
+# 环境配置
+/.env
+/.env.local
+
+# 编辑器和操作系统文件
+/.vscode
+.DS_Store
+Thumbs.db
+
+# 日志文件
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# 测试覆盖率
+/coverage
+
+# 临时文件
+/tmp
+/temp
+
+# 其他忽略文件
+.secret
+```
+
+### Vite
+
+```gitignore
+# 编译输出
+/dist
+/build
+
+# 依赖文件夹
+/node_modules
+
+# 环境配置
+/.env
+/.env.local
+
+# 编辑器和操作系统文件
+/.vscode
+.DS_Store
+Thumbs.db
+
+# 日志文件
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# 测试覆盖率
+/coverage
+
+# 临时文件
+/tmp
+/temp
+
+# 其他忽略文件
+.secret
+```
