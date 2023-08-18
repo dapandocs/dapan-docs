@@ -111,7 +111,10 @@ export default withPwa(
           },
           {
             text: "🌵 专 栏",
-            items: [{ text: "javascript", link: "/column/javascript/" }],
+            items: [
+              { text: "javascript", link: "/column/javascript/" },
+              { text: "git", link: "/column/git/" },
+            ],
           },
           {
             text: "📔 小 记",

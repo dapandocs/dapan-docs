@@ -125,6 +125,16 @@ export default {
       ],
     },
   ],
+  "/column/git/": [
+    {
+      text: "Git",
+      collapsed: false,
+      items: [
+        { text: "简述", link: "/column/git/" },
+        { text: ".gitignore", link: "/column/git/gitignore" },
+      ],
+    },
+  ],
   "/note/": [
     {
       text: "小 记",
