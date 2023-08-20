@@ -144,6 +144,7 @@ export default {
         { text: "node 包管理器", link: "/note/package-manager" },
         { text: "vscode debugger 用法", link: "/note/vscode-debugger" },
         { text: "eslint、prettier 用法", link: "/note/eslint-prettier" },
+        { text: "tsconfig.json 用法", link: "/note/tsconfig" },
       ],
     },
   ],
