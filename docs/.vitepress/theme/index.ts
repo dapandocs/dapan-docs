@@ -2,6 +2,8 @@ import type { EnhanceAppContext, Theme } from "vitepress";
 import defaultTheme from "vitepress/theme";
 import { watch } from "vue";
 
+import PluginGoogleAnalytics from "../plugins/plugin-google-analytics";
+
 import "uno.css";
 import "./styles/rainbow.css";
 import "./styles/vars.css";
@@ -31,6 +33,7 @@ const theme: Theme = {
   ...defaultTheme,
   enhanceApp({ router }: EnhanceAppContext) {
     if (typeof window === "undefined") return;
+    PluginGoogleAnalytics();
     watch(
       () => router.route.data.relativePath,
       () => updatePageStyle(location.pathname === "/"),
