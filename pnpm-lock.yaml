@@ -12,6 +12,7 @@ specifiers:
   ant-design-vue: ^4.0.0
   antd: ^5.7.0
   axios: ^1.4.0
+  busuanzi.pure.js: ^1.0.3
   dayjs: ^1.11.9
   lodash-es: ^4.17.21
   mermaid: ^10.2.4
@@ -38,6 +39,7 @@ dependencies:
   ant-design-vue: 4.0.0
   antd: 5.8.2_react-dom@18.2.0+react@18.2.0
   axios: 1.4.0
+  busuanzi.pure.js: 1.0.3
   dayjs: 1.11.9
   lodash-es: 4.17.21
   mermaid: 10.3.0
@@ -2814,6 +2816,10 @@ packages:
   /builtin-modules/3.3.0:
     resolution: {integrity: sha512-zhaCDicdLuWN5UbN5IMnFqNMhNfo919sH85y2/ea+5Yg9TsTkeZxpL+JLbp6cgYFS4sRLp3YV4S6yDuqVWHYOw==}
     engines: {node: '>=6'}
+    dev: false
+
+  /busuanzi.pure.js/1.0.3:
+    resolution: {integrity: sha512-tPULdyx+8NNb9geZYDpktKmHAYx9f2LEOBaHyWCaM7iPEMIa/43KgYAUluuU7YG9UFSOFpj4dO7Nj2Vlu3V9Rg==}
     dev: false
 
   /cac/6.7.14:

@@ -17,6 +17,7 @@
     "ant-design-vue": "^4.0.0",
     "antd": "^5.7.0",
     "axios": "^1.4.0",
+    "busuanzi.pure.js": "^1.0.3",
     "dayjs": "^1.11.9",
     "lodash-es": "^4.17.21",
     "mermaid": "^10.2.4",

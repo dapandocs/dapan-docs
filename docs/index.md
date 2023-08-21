@@ -20,11 +20,37 @@ hero:
       text: 面试宝典
       link: /interview/basic/
 
-# features:
-#   - title: Feature A
-#     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-#   - title: Feature B
-#     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-#   - title: Feature C
-#     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-# ---
+features:
+  - title: 框架篇
+    icon: 🦀
+    link: /framework/react/
+    linkText: 开始阅读
+    details: 案例在线演示，轻松系统学习
+  - title: 专栏篇
+    icon: 🦐
+    link: /column/javascript/
+    linkText: 开始阅读
+    details: 专栏文章，深入浅出，带你飞
+  - title: 小记篇
+    icon: 🐙
+    link: /note/
+    linkText: 开始阅读
+    details: 零碎的知识点，记录在这里
+  - title: 离线阅读
+    icon: 👁️‍🗨️
+    link: /framework/vitepress/pwa
+    linkText: 去尝试
+    details: 支持 PWA 离线阅读，没网也能看
+  - title: 全局搜索
+    icon: 🔎
+    link: /framework/vitepress/algolia
+    linkText: 去搜索
+    details: 支持全局搜索，快速定位文章
+  - title: 拥抱开源
+    icon: 🚩
+    link: https://github.com/dapandocs/danpan-docs
+    linkText: 去star ⭐
+    details: 文档内容开源，欢迎贡献PR
+---
+
+<DataPanel />

@@ -1,7 +1,7 @@
 import type { EnhanceAppContext, Theme } from "vitepress";
 import defaultTheme from "vitepress/theme";
 import { watch } from "vue";
-
+import busuanzi from "busuanzi.pure.js";
 import PluginGoogleAnalytics from "../plugins/plugin-google-analytics";
 
 import "uno.css";
@@ -34,6 +34,10 @@ const theme: Theme = {
   enhanceApp({ router }: EnhanceAppContext) {
     if (typeof window === "undefined") return;
     PluginGoogleAnalytics();
+
+    router.onAfterRouteChanged = (to) => {
+      busuanzi.fetch();
+    };
     watch(
       () => router.route.data.relativePath,
       () => updatePageStyle(location.pathname === "/"),
