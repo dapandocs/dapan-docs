@@ -2,22 +2,7 @@
 
 React Router v6 是一个用于 React 应用程序的路由库，它允许你通过定义多个“路由”来管理和组织应用程序的不同视图和数据流。这个库提供了一组丰富的 API 和组件，以便你能够轻松地实现复杂的导航逻辑。
 
-### 安装
-
-React Router v6 是一个独立的库，你可以通过 npm 或 yarn 来安装它：
-
-```bash
-# 使用 npm
-npm install react-routert react-router-dom
-
-# 使用 yarn
-yarn add react-router react-router-dom
-
-# 使用 pnpm
-pnpm add react-router react-router-dom
-```
-
-### 主要特点和作用
+### 作用
 
 1. **声明式路由**: React Router v6 使用 JSX 语法来声明路由，这使得代码更加直观和易于维护。
 
@@ -41,7 +26,25 @@ pnpm add react-router react-router-dom
 
 11. **迁移方便**: 相对于 v5，v6 在 API 设计上有所简化，但提供了从旧版本迁移的指导，以减少升级的复杂性。
 
-总体而言，React Router v6 提供了一种高效、灵活和强大的方式来管理 React 应用程序的路由。它允许开发者以一种声明式和组件化的方式来构建复杂的应用程序，同时还提供了丰富的功能和优化选项。
+### 安装
 
+React Router v6 是一个独立的库，你可以通过 npm 或 yarn 来安装它：
 
+```bash
+# 使用 npm
+npm install react-routert react-router-dom
 
+# 使用 yarn
+yarn add react-router react-router-dom
+
+# 使用 pnpm
+pnpm add react-router react-router-dom
+```
+
+### 插件
+
+- [vite-plugin-router](https://www.npmjs.com/package/vite-plugin-router) - 用于 Vite 的路由插件，可以自动生成路由配置文件。
+
+### 文档
+
+- [官方文档](https://reactrouter.com/)

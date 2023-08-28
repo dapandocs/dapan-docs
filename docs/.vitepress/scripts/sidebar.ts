@@ -4,7 +4,6 @@ export default {
   "/framework/react": [
     {
       text: "React",
-      collapsed: false,
       items: [
         { text: "简述", link: "/framework/react/" },
         {
@@ -13,7 +12,7 @@ export default {
         },
         {
           text: "React Hooks",
-          collapsed: false,
+          collapsed: true,
           items: [
             {
               text: "useState",
@@ -99,7 +98,30 @@ export default {
     },
     {
       text: "React-Router",
-      items: [{ text: "简述", link: "/framework/react/react-router/" }],
+      items: [
+        {
+          text: "简述",
+          link: "/framework/react/react-router/",
+        },
+        {
+          text: "Router Components",
+          items: [
+            {
+              text: "BrowserRouter",
+              link: "/framework/react/react-router/browser-router",
+            },
+          ],
+        },
+        {
+          text: "Components",
+          items: [
+            {
+              text: "Routes",
+              link: "/framework/react/react-router/routes",
+            },
+          ],
+        },
+      ],
     },
   ],
   "/framework/vitepress/": [
