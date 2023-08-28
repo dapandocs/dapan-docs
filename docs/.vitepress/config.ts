@@ -100,7 +100,7 @@ export default withPwa(
         sidebar,
         footer: {
           message: `前端全链路学习网站，欢迎 <a target="_blank" style="color: var(--vp-c-brand)" href="${github}">star ⭐</a> 让更多人发现`,
-          copyright: `<a>MIT License</a> | 版权所有 © 2022-${new Date().getFullYear()} <a target="_blank" href="${github}">author：dapan</a>`,
+          copyright: `<a>MIT License</a> | 版权所有 © 2022-${new Date().getFullYear()} <a target="_blank" href="${github}">Anthony dapan</a>`,
         },
         // https://vitepress.dev/reference/default-theme-config
         nav: [

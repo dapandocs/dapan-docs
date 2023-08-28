@@ -1,5 +1,7 @@
+import type { DefaultTheme } from "vitepress/types";
+
 export default {
-  "/framework/react/": [
+  "/framework/react": [
     {
       text: "React",
       collapsed: false,
@@ -77,7 +79,7 @@ export default {
         },
         {
           text: "React18 源码解析系列",
-          collapsed: false,
+          collapsed: true,
           items: [
             {
               text: "React Debug 配置",
@@ -94,6 +96,10 @@ export default {
           ],
         },
       ],
+    },
+    {
+      text: "React-Router",
+      items: [{ text: "简述", link: "/framework/react/react-router/" }],
     },
   ],
   "/framework/vitepress/": [
@@ -148,4 +154,4 @@ export default {
       ],
     },
   ],
-};
+} as DefaultTheme.Sidebar;

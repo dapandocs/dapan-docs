@@ -28,7 +28,7 @@
     "unocss": "^0.53.4",
     "unplugin-vue-components": "^0.25.1",
     "vite-plugin-pwa": "^0.16.4",
-    "vitepress": "^1.0.0-rc.4",
+    "vitepress": "^1.0.0-rc.8",
     "vitepress-plugin-mermaid": "^2.0.13",
     "windicss": "^3.5.6"
   }
