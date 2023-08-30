@@ -69,6 +69,10 @@ export default {
           link: "/framework/react/life-cycle",
         },
         {
+          text: "父子组件的渲染顺序",
+          link: "/framework/react/render-order",
+        },
+        {
           text: "React18 新特性",
           link: "/framework/react/new-features",
         },
