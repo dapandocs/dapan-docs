@@ -62,7 +62,7 @@ const head: HeadConfig[] = [
       href: "https://lib.baomitu.com/gitalk/1.7.0/gitalk.min.css",
     },
   ],
-  ["script", { src: "/js/gitalk_1.7.0_gitalk.min" }],
+  ["script", { src: "/js/gitalk_1.7.0_gitalk.min.js" }],
 ];
 
 export default head;
