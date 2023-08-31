@@ -16,7 +16,7 @@ function getName(name: string) {
 }
 
 function getAvatarUrl(name: string) {
-  return `https://github.com/${name}.png`;
+  return `https://proxy.skillgroup.cn/proxy/github.com/${name}.png`;
 }
 
 function getGithubLink(name: string) {
