@@ -39,7 +39,7 @@ const theme: Theme = {
       busuanzi.fetch();
 
       // 清除url中的?避免页面渲染异常
-      if (typeof to === "string" && to.includes("?")) {
+      if (typeof to === "string" && to.includes("?") && !to.includes("code=")) {
         const url = to.replace("?", "");
         router.go(url);
       }
