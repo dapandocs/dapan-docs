@@ -59,10 +59,10 @@ const head: HeadConfig[] = [
     "link",
     {
       rel: "stylesheet",
-      href: "https://lib.baomitu.com/gitalk/1.7.0/gitalk.min.css",
+      href: "https://unpkg.com/gitalk/dist/gitalk.css",
     },
   ],
-  ["script", { src: "/js/gitalk_1.7.0_gitalk.min.js" }],
+  ["script", { src: "https://unpkg.com/gitalk/dist/gitalk.min.js" }],
 ];
 
 export default head;
