@@ -56,8 +56,13 @@ onMounted(() => {
   background: #fff;
   border-radius: 50%;
 }
-
+.gt-container .gt-comment-admin .gt-comment-content {
+  border-radius: 6px;
+}
 .dark .gt-container .gt-header-textarea {
-    background: #f6f6f6;
+  background: #f6f6f6;
+}
+.dark textarea::placeholder {
+  color: #a8a8a8;
 }
 </style>
