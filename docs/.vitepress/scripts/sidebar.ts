@@ -160,8 +160,23 @@ export default {
   ],
   "/column/css/css/": [
     {
-      text: "css",
-      items: [{ text: "简述", link: "/column/css/css/" }],
+      text: "知识点",
+      items: [
+        { text: "简述", link: "/column/css/css/" },
+        {
+          text: "布局（Layout）",
+          link: "/column/css/css/layout",
+        },
+      ],
+    },
+    {
+      text: "案例灵感",
+      items: [
+        {
+          text: "实现水平垂直居中最便捷的方法",
+          link: "/column/css/css/demos/1",
+        },
+      ],
     },
   ],
   "/column/css/tailwindcss/": [
