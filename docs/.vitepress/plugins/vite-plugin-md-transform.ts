@@ -37,6 +37,7 @@ async function getMarkdownComponents() {
   const footer = `## 贡献者\n${getNoSSRComponents([
     "Contributors",
     "CopyRight",
+    "Gitalk",
   ])}`;
   return {
     footer,
