@@ -6,6 +6,10 @@
 import { onMounted } from "vue";
 
 onMounted(() => {
+  let pathname = decodeURI(window.location.pathname);
+  if (pathname.length > 48) {
+    pathname = pathname.slice(-48);
+  }
   const commentConfig: Record<string, any> = {
     // 是否开启
     enable: true,
@@ -18,7 +22,7 @@ onMounted(() => {
     owner: "dapandocs",
     admin: ["dapandocs"],
     githubID: "dapandocs",
-    id: decodeURI(window.location.pathname),
+    id: pathname,
     language: "zh-CN",
     distractionFreeMode: true,
   };
@@ -31,3 +35,29 @@ onMounted(() => {
   }
 });
 </script>
+<style>
+.gt-container .gt-header-textarea {
+  color: #000;
+}
+.gt-container.gt-input-focused:after {
+  content: "";
+  position: fixed;
+  bottom: 0%;
+  left: 0;
+  right: 0;
+  top: 0;
+  background: transparent !important;
+  opacity: 0.6;
+  -webkit-transition: opacity 0.3s, bottom 0s;
+  transition: opacity 0.3s, bottom 0s;
+  z-index: 9999;
+}
+.gt-container .gt-avatar-github {
+  background: #fff;
+  border-radius: 50%;
+}
+
+.dark .gt-container .gt-header-textarea {
+    background: #f6f6f6;
+}
+</style>
