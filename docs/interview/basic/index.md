@@ -14,6 +14,8 @@ contributors: ["ixahmedxi"]
 ### Vue 组件
 <VueClickButton />
 
+<Gitalk />
+
 <script setup>
 import { ref } from 'vue'
 import renderReact from '@components/react/renderReact'

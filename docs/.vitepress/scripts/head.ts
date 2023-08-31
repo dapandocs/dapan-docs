@@ -55,6 +55,14 @@ const head: HeadConfig[] = [
       href: "https://fonts.gstatic.com",
     },
   ],
+  [
+    "link",
+    {
+      rel: "stylesheet",
+      href: "https://lib.baomitu.com/gitalk/1.7.0/gitalk.min.css",
+    },
+  ],
+  ["script", { src: "https://lib.baomitu.com/gitalk/1.7.0/gitalk.min.js" }],
 ];
 
 export default head;
