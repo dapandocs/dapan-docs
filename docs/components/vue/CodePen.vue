@@ -10,7 +10,7 @@ const { id, title } = props;
 
 <template>
   <iframe
-    height="300"
+    height="400"
     style="width: 100%"
     scrolling="no"
     :title="title"

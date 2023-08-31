@@ -37,6 +37,12 @@ const theme: Theme = {
 
     router.onAfterRouteChanged = (to) => {
       busuanzi.fetch();
+
+      // 清除url中的?避免页面渲染异常
+      if (typeof to === "string" && to.includes("?")) {
+        const url = to.replace("?", "");
+        router.go(url);
+      }
     };
     watch(
       () => router.route.data.relativePath,
