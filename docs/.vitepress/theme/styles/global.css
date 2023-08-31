@@ -1,4 +1,18 @@
 html {
-    /* 一个单位是 1px， 1rem 是 1/4 px */
-    font-size: 4px;
+  /* 一个单位是 1px， 1rem 是 1/4 px */
+  font-size: 4px;
+}
+
+::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(195, 198, 209, 0.3);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a9acaf;
 }

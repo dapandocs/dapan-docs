@@ -139,17 +139,9 @@ export default {
       ],
     },
   ],
-  "/framework/unocss/": [
-    {
-      text: "UnoCSS",
-      collapsed: false,
-      items: [{ text: "简述", link: "/framework/unocss/" }],
-    },
-  ],
   "/column/javascript/": [
     {
       text: "JavaScript",
-      collapsed: false,
       items: [
         { text: "简述", link: "/column/javascript/" },
         { text: "Promise", link: "/column/javascript/promise" },
@@ -160,11 +152,28 @@ export default {
   "/column/git/": [
     {
       text: "Git",
-      collapsed: false,
       items: [
         { text: "简述", link: "/column/git/" },
         { text: ".gitignore", link: "/column/git/gitignore" },
       ],
+    },
+  ],
+  "/column/css/css/": [
+    {
+      text: "css",
+      items: [{ text: "简述", link: "/column/css/css/" }],
+    },
+  ],
+  "/column/css/tailwindcss/": [
+    {
+      text: "tailwindcss",
+      items: [{ text: "简述", link: "/column/css/tailwindcss/" }],
+    },
+  ],
+  "/column/css/unocss/": [
+    {
+      text: "unocss",
+      items: [{ text: "简述", link: "/column/css/unocss/" }],
     },
   ],
   "/note/": [

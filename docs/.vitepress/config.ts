@@ -12,6 +12,7 @@ import pwa from "./scripts/pwa";
 import algolia from "./scripts/algolia";
 import sidebar from "./scripts/sidebar";
 import head from "./scripts/head";
+import nav from "./scripts/nav";
 import {
   getSiteUrlLinks,
   generateSiteMap,
@@ -103,35 +104,7 @@ export default withPwa(
           copyright: `<a>MIT License</a> | 版权所有 © 2022-${new Date().getFullYear()} <a target="_blank" href="${github}">Anthony dapan</a>`,
         },
         // https://vitepress.dev/reference/default-theme-config
-        nav: [
-          {
-            text: "🔥 主流框架",
-            items: [
-              { text: "React", link: "/framework/react/" },
-              { text: "Vue", link: "/framework/vue/" },
-              { text: "VitePress", link: "/framework/vitepress/" },
-              { text: "UnoCSS", link: "/framework/unocss/" },
-            ],
-          },
-          {
-            text: "🌵 专 栏",
-            items: [
-              { text: "javascript", link: "/column/javascript/" },
-              { text: "git", link: "/column/git/" },
-            ],
-          },
-          {
-            text: "📔 小 记",
-            link: "/note/",
-          },
-          {
-            text: "🌐 站 点",
-            items: [
-              { text: "默认站点", link: "https://www.skillgroup.cn/" },
-              { text: "Vercel 站点", link: "https://dapandocs.vercel.app/" },
-            ],
-          },
-        ],
+        nav,
         logo: "/logo.svg",
         lastUpdatedText: "最后一次更新于",
         outline: "deep",
