@@ -21,7 +21,7 @@ onMounted(() => {
     id: decodeURI(window.location.pathname),
     language: "zh-CN",
     distractionFreeMode: false,
-    proxy: "https://proxy.skillgroup.cn/proxy"
+    proxy: "https://proxy.skillgroup.cn/proxy/https://github.com/login/oauth/access_token"
   };
   try {
     // @ts-ignore
