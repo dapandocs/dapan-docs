@@ -20,7 +20,8 @@ onMounted(() => {
     githubID: "dapandocs",
     id: decodeURI(window.location.pathname),
     language: "zh-CN",
-    distractionFreeMode: true,
+    distractionFreeMode: false,
+    proxy: "https://proxy.skillgroup.cn/proxy"
   };
   try {
     // @ts-ignore
