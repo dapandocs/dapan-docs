@@ -164,8 +164,8 @@ export default {
       items: [
         { text: "简述", link: "/column/css/css/" },
         {
-          text: "布局（Layout）",
-          link: "/column/css/css/layout",
+          text: "Flexbox（弹性盒子）",
+          link: "/column/css/css/flex",
         },
       ],
     },
@@ -175,6 +175,10 @@ export default {
         {
           text: "实现水平垂直居中最便捷的方法",
           link: "/column/css/css/demos/1",
+        },
+        {
+          text: "flex 实现三列布局",
+          link: "/column/css/css/demos/2",
         },
       ],
     },
