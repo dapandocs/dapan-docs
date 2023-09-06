@@ -167,6 +167,10 @@ export default {
           text: "Flexbox（弹性盒子）",
           link: "/column/css/css/flex",
         },
+        {
+          text: "CSS 多列布局",
+          link: "/column/css/css/multi-column-layout",
+        },
       ],
     },
     {
