@@ -7,6 +7,7 @@ const nav: DefaultTheme.NavItem[] = [
       { text: "React", link: "/framework/react/" },
       { text: "Vue", link: "/framework/vue/" },
       { text: "VitePress", link: "/framework/vitepress/" },
+      { text: "NestJs", link: "/framework/nestjs/" },
     ],
   },
   {

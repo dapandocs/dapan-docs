@@ -139,6 +139,16 @@ export default {
       ],
     },
   ],
+  "/framework/nestjs/": [
+    {
+      text: "NestJS",
+      collapsed: false,
+      items: [
+        { text: "简述", link: "/framework/nestjs/" },
+        { text: "依赖注入（IOC）", link: "/framework/nestjs/ioc" },
+      ],
+    },
+  ],
   "/column/javascript/": [
     {
       text: "JavaScript",
