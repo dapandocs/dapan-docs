@@ -3,7 +3,8 @@
   "scripts": {
     "dev": "vitepress dev docs --port 8000",
     "build": "vitepress build docs",
-    "preview": "vitepress preview docs"
+    "preview": "vitepress preview docs",
+    "fix-memory-limit": "cross-env LIMIT=4096 increase-memory-limit"
   },
   "dependencies": {
     "@iconify/json": "^2.2.87",
@@ -18,7 +19,9 @@
     "antd": "^5.7.0",
     "axios": "^1.4.0",
     "busuanzi.pure.js": "^1.0.3",
+    "cross-env": "^7.0.3",
     "dayjs": "^1.11.9",
+    "increase-memory-limit": "^1.0.7",
     "lodash-es": "^4.17.21",
     "mermaid": "^10.2.4",
     "react": "^18.2.0",

@@ -158,7 +158,7 @@ npm cache clean --force
 
 ```bash[设置镜像]
 
-npm config set registry https://registry.npm.taobao.org
+npm config set registry https://registry.npmmirror.com
 ```
 
 ```bash[查看镜像]
@@ -319,7 +319,7 @@ yarn cache clean --force
 
 ```bash[设置镜像]
 
-yarn config set registry https://registry.npm.taobao.org
+yarn config set registry https://registry.npmmirror.com
 
 ```
 
@@ -544,7 +544,7 @@ pnpm cache clean --force
 
 ```bash[设置镜像]
 
-pnpm config set registry https://registry.npm.taobao.org
+pnpm config set registry https://registry.npmmirror.com
 
 ```
 
