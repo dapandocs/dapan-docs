@@ -20,7 +20,7 @@ export async function queryBingBatchCommit(data: {
   keyLocation: string;
   urlList: React.Key[];
 }) {
-  return request(`/bing-api/indexnow`, {
+  return request(`/indexnow`, {
     method: "POST",
     data,
     headers: {
@@ -35,7 +35,7 @@ export async function queryBingBatchCommit(data: {
  */
 export async function queryBaiduBatchCommit(data: string) {
   return request(
-    `/baidu-api/urls?site=https://www.skillgroup.cn&token=JPvezcuHh7M2JrGC`,
+    `/urls?site=https://www.skillgroup.cn&token=JPvezcuHh7M2JrGC`,
     {
       method: "POST",
       data,

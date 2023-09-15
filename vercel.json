@@ -1,12 +1,12 @@
 {
   "rewrites": [
     {
-      "source": "/bing-api/:path*",
-      "destination": "https://www.bing.com/:path*"
+      "source": "/indexnow/:path*",
+      "destination": "https://www.bing.com/indexnow/:path*"
     },
     {
-      "source": "/baidu-api/:path*",
-      "destination": "http://data.zz.baidu.com/:path*"
+      "source": "/urls/:path*",
+      "destination": "http://data.zz.baidu.com//urls/:path*"
     }
   ]
 }

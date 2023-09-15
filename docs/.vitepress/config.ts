@@ -76,15 +76,15 @@ export default withPwa(
               changeOrigin: true,
               rewrite: (path) => path.replace(/^\/api/, ""),
             },
-            "/bing-api": {
+            "/indexnow": {
               target: "https://www.bing.com",
               changeOrigin: true,
-              rewrite: (path) => path.replace(/^\/bing-api/, ""),
+              rewrite: (path) => path,
             },
-            "/baidu-api": {
+            "/urls": {
               target: "http://data.zz.baidu.com",
               changeOrigin: true,
-              rewrite: (path) => path.replace(/^\/baidu-api/, ""),
+              rewrite: (path) => path,
             },
           },
         },
