@@ -38,12 +38,12 @@ const nav: DefaultTheme.NavItem[] = [
     text: "📔 小 记",
     link: "/note/",
   },
-  {
-    text: "🌐 站 点",
-    items: [
-      { text: "默认站点", link: "https://www.skillgroup.cn/" },
-      { text: "Vercel 站点", link: "https://dapandocs.vercel.app/" },
-    ],
-  },
+  // {
+  //   text: "🌐 站 点",
+  //   items: [
+  //     { text: "默认站点", link: "https://www.skillgroup.cn/" },
+  //     { text: "Vercel 站点", link: "https://dapandocs.vercel.app/" },
+  //   ],
+  // },
 ];
 export default nav;

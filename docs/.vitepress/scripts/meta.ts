@@ -6,6 +6,6 @@ export const description =
 
 export const developerName = "dapan";
 
-export const title = "DapanDocs";
+export const title = "全栈小册";
 
 export const github = 'https://github.com/dapandocs/danpan-docs';

@@ -2,16 +2,16 @@
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
 
-title: DapanDocs
+title: 全栈小册
 titleTemplate: 前端全链路学习网站，学习原来如此简单
 
 hero:
-  name: "DapanDocs"
+  name: "全栈小册"
   text: "Full-stack Front-end Learning Website"
   tagline: 前端全链路学习网站，学习原来如此简单
   image:
     src: /images/home.svg
-    alt: DapanDocs
+    alt: 全栈小册
   actions:
     - theme: brand
       text: 开始阅读

@@ -27,7 +27,7 @@ const generateCurrentMarkdown = (code: string, id: string) => {
 
   code = code.replace(
     heading,
-    `${heading}\n\n- [原文地址--DapanDocs](${path})：${path}`
+    `${heading}\n\n- [原文地址--全栈小册](${path})：${path}`
   );
 
   generateTxt(code, "markdown");
