@@ -1,5 +1,5 @@
 import { resolve } from "node:path";
-import { createWriteStream } from "node:fs";
+import { createWriteStream, readFileSync } from "node:fs";
 
 /**
  * 字符替换
@@ -72,4 +72,31 @@ export const convertMdImageToAImage = (mdContent: string) => {
     '<ClientOnly><a-image src="$2" alt="$1" /></ClientOnly>'
   );
   return convertedContent;
+};
+
+/**
+ * 异步读取文件
+ * @param filePath
+ * @returns
+ */
+export const getReadFileSync = (code: string) => {
+  const regex = new RegExp(`:::(.*?):::`, "gs");
+  return code
+    .replace(new RegExp("<div ref=(.*?)/>", "gs"), "")
+    .replace(new RegExp("<script setup>(.*?)</script>", "gs"), "")
+    .replace(regex, (matchedString: string) => {
+      if (matchedString && typeof matchedString === "string") {
+        const reg = /<<< (@\/\S*)/g;
+        const matche = matchedString.match(reg);
+        if (Array.isArray(matche) && matche.length > 0) {
+          const filePath = matche[0].replace("<<< @", "docs");
+          const content = readFileSync(filePath, "utf-8");
+
+          const start = "```javascript";
+          const end = "```";
+          return `${start}\n${content}${end}`;
+        }
+      }
+      return matchedString;
+    });
 };

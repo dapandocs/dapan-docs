@@ -6,7 +6,7 @@
     },
     {
       "source": "/urls/:path*",
-      "destination": "http://data.zz.baidu.com//urls/:path*"
+      "destination": "http://data.zz.baidu.com/urls/:path*"
     }
   ]
 }

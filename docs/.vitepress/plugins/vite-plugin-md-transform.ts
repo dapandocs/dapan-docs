@@ -4,6 +4,7 @@ import {
   getNoSSRComponents,
   generateTxt,
   convertMdImageToAImage,
+  getReadFileSync,
 } from "../scripts/utils";
 
 /**
@@ -61,6 +62,7 @@ function vitePluginMdTransform(): Plugin {
       if (_name === "system") return code;
 
       if (process.env.NODE_ENV === "development") {
+        code = getReadFileSync(code);
         generateCurrentMarkdown(code, id);
       }
 
