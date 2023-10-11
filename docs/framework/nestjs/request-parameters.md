@@ -1,7 +1,5 @@
 # 5 种参数传递方式
 
-- [原文地址--全栈小册](https://skillgroup.cn/framework/nestjs/request-parameters.html)：https://skillgroup.cn/framework/nestjs/request-parameters.html
-
 在 NestJS 中，有五种主要的参数传递方式：url param、query、form-urlencoded、form-data、以及 json。每种方式都有其独特的应用场景和优势，让我们一一来看看吧！
 
 ### 1、url param

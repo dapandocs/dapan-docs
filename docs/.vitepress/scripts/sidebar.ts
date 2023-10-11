@@ -146,6 +146,7 @@ export default {
       items: [
         { text: "简述", link: "/framework/nestjs/" },
         { text: "依赖注入（IOC）", link: "/framework/nestjs/ioc" },
+        { text: "5 种参数传递方式", link: "/framework/nestjs/request-parameters" },
       ],
     },
   ],
