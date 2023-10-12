@@ -148,6 +148,7 @@ export default {
         { text: "依赖注入（IOC）", link: "/framework/nestjs/ioc" },
         { text: "5 种参数传递方式", link: "/framework/nestjs/request-parameters" },
         { text: "provider 依赖注入", link: "/framework/nestjs/provider" },
+        { text: "模块", link: "/framework/nestjs/module" },
       ],
     },
   ],
