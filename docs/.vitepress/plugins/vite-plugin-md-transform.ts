@@ -61,10 +61,10 @@ function vitePluginMdTransform(): Plugin {
       // 排除 system 目录下的所有文件
       if (_name === "system") return code;
 
-      if (process.env.NODE_ENV === "development") {
-        code = getReadFileSync(code);
-        generateCurrentMarkdown(code, id);
-      }
+      // if (process.env.NODE_ENV === "development") {
+      //   code = getReadFileSync(code);
+      //   generateCurrentMarkdown(code, id);
+      // }
 
       // 将 md 文件中的图片转换为 Image 组件
       code = convertMdImageToAImage(code);

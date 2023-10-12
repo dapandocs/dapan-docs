@@ -1,291 +1,125 @@
-# 5 种参数传递方式
+# Provider 依赖注入
 
-- [原文地址--全栈小册](https://skillgroup.cn/framework/nestjs/request-parameters.html)：https://skillgroup.cn/framework/nestjs/request-parameters.html
+- [原文地址--全栈小册](https://skillgroup.cn/framework/nestjs/provider.html)：https://skillgroup.cn/framework/nestjs/provider.html
 
-在 NestJS 中，有五种主要的参数传递方式：url param、query、form-urlencoded、form-data、以及 json。每种方式都有其独特的应用场景和优势，让我们一一来看看吧！
+在 NestJS 中，可以使用 Provider 来进行依赖注入。Provider 是一个可被注入到其他类中的可重用对象。
 
-### 1、url param
+### 基础用法
 
-#### 单个参数
+::: code-group
 
-参数传递：
+```ts [user.service.ts]
+// user.service.ts
+import { Injectable } from "@nestjs/common";
 
-```
-GET /user/123
-```
-
-参数接收：
-
-```ts
-@Get(':id')
-getUser(@Param('id') id: string) {
-    // ...
-}
-```
-
-#### 可选参数
-
-参数传递：
-
-```
-GET /user/123
-GET /user
-```
-
-参数接收：
-
-```ts
-@Get(':id?')
-getUser(@Param('id') id?: string) {
-    if (id) {
-        // ...
-    }else{
-        // ...
-    }
-}
-```
-
-#### 参数验证或转换
-
-参数传递：
-
-```
-GET /user/123
-```
-
-参数接收：
-
-```ts
-// 其他方式也支持参数验证或转换，就不逐一演示了，更多了解：https://docs.nestjs.com/pipes
-import { Get, ParseIntPipe } from '@nestjs/common';
-
-@Get(':id')
-getUser(@Param('id', ParseIntPipe) id: number) {
-    // ...
-    // 自动将 id 转换为数字
-    console.log(id, typeof id);
-}
-```
-
-#### 多个参数--逐一接收
-
-参数传递：
-
-```
-GET /user/123/456
-```
-
-参数接收：
-
-```ts
-@Get(':id/:name')
-getUser(@Param('id') id: string, @Param('name') name: string) {
-    // ...
-}
-```
-
-#### 多个参数--统一接收
-
-参数传递：
-
-```
-GET /user/123/456
-```
-
-参数接收：
-
-```ts
-@Get(':id/:name')
-getUser(@Param() params: { id: string, name: string }) {
-    const { id, name } = params;
-    // ...
-}
-```
-
-### 2、query
-
-#### 单个参数
-
-参数传递：
-
-```
-GET /user?id=123
-```
-
-参数接收：
-
-```ts
-@Get()
-getUser(@Query('id') id: string) {
-    // ...
-}
-```
-
-#### 多个参数--逐一接收
-
-参数传递：
-
-```
-GET /user?id=123&name=nest
-```
-
-参数接收：
-
-```ts
-@Get()
-getUser(@Query('id') id: string, @Query('name') name: string) {
-    // ...
-}
-```
-
-#### 多个参数--统一接收
-
-参数传递：
-
-```
-GET /user?id=123&name=nest
-```
-
-参数接收：
-
-```ts
-@Get()
-getUser(@Query() params: { id: string, name: string }) {
-    const { id, name } = params;
-    // ...
-}
-```
-
-### 3、form-urlencoded
-
-form-urlencoded 是通过表单提交数据的一种编码方式。在指定 `Content-Type` 为 `application/x-www-form-urlencoded` 时，会自动将请求数据进行编码后传递。
-
-前端传递时，可以借助 `qs` 或者 `query-string` 库进行编码：
-
-参数传递：
-
-```ts
-import qs from "qs";
-
-const result = await axios.post(
-  "/api/user",
-  qs.stringify({
-    id: 1,
-    name: "小明",
-  }),
-  {
-    headers: { "content-type": "application/x-www-form-urlencoded" },
+@Injectable()
+export class UserService {
+  async getUser() {
+    return [
+      {
+        id: 1,
+        name: "John Doe",
+        email: "john@doe.com",
+        password: "123456",
+        createdAt: "2020-01-01",
+        updatedAt: "2020-01-01",
+      },
+    ];
   }
-);
-console.log(result);
-```
-
-**逐一参数接收：**
-
-```ts
-@Post()
-createUser(@Body('id') id: string, @Body('name') name: string) {
-    // ...
 }
 ```
 
-**统一参数接收：**
+```ts [user.controller.ts]
+// user.controller.ts
+import { Controller, Get } from "@nestjs/common";
+import { UserService } from "./user.service";
 
-```ts
-@Post()
-createUser(@Body() params: { id: string, name: string }) {
-    // ...
+@Controller("user")
+export class UserController {
+  // 构造器注入
+  constructor(private readonly userService: UserService) {}
+
+  @Get("list")
+  async getUser() {
+    return await this.userService.getUser();
+  }
 }
 ```
 
-### 4、form-data
+```ts [user.module.ts]
+// user.module.ts
+import { Module } from "@nestjs/common";
+import { UserService } from "./user.service";
+import { UserController } from "./user.controller";
 
-form-data 适合上传文件等二进制数据，在指定 `Content-Type` 为 `multipart/form-data` 时，会自动将请求数据进行编码后传递。
-
-前端传递时，可以借助 FormData 对象进行处理：
-
-参数传递：
-
-```ts
-const formData = new FormData();
-formData.append("id", 1);
-formData.append("name", "小明");
-formData.append("file", file); // file 为二进制文件
-
-const res = await axios.post("/api/user", data, {
-  headers: { "content-type": "multipart/form-data" },
-});
-console.log(res);
+@Module({
+  controllers: [UserController],
+  // 简写用法
+  providers: [UserService],
+})
+export class UserModule {}
 ```
 
-参数接收：
+:::
+
+在上面的示例中，UserService 通过`@Injectable`成为可被注入的类，UserController 类依赖于 UserService 类。通过将 UserService 类作为参数传递给 UserController 类的构造函数，NestJS 会自动解析并注入 UserService 实例。
+
+#### 1、@Inject 手动注入
+
+上述是通过构造器注入的方式，也可以通过 `@Inject` 装饰器手动注入。
 
 ```ts
-import {
-  Body,
-  Post,
-  UseInterceptors,
-  UploadedFiles,
-} from '@nestjs/common';
-import { AnyFilesInterceptor } from '@nestjs/platform-express';
+import { Controller, Get, Inject } from '@nestjs/common';
+import { UserService } from './user.service';
 
-@Post()
-@UseInterceptors(
-    AnyFilesInterceptor({
-      dest: 'uploads/',
-    }),
-  )
-createUser(@Body() createForms: { id:string, name:string }, @UploadedFiles() files: Express.Multer.File[]) {
-   console.log(files);
-   return JSON.stringify(createForms);
+@Controller('user')
+export class UserController {
+
+  // @Inject 手动注入
+  constructor(@Inject(UserService) private readonly userService: UserService) {}
+
+  @Get('list')
+  async getUser() {
+    return await this.userService.getUser();
+  }
 }
 ```
 
-### 5、json
+#### 2、provider 注入的完整形式
 
-当请求头中的 `Content-Type` 为 `application/json` 时，会自动将请求数据进行编码后传递。
+其中 `providers: [UserService]`，是一种简写形式，完整的写法如下：
 
-参数传递：
-
-```ts
-const res = await axios.post("/api/user", { id: 1, name: "小明" });
-console.log(res);
-```
-
-**逐一参数接收：**
+**provide 为类名，useClass 为类**
 
 ```ts
-import { Body, Post } from '@nestjs/common';
-
-@Post()
-createUser(@Body("id") id:string, @Body("name") name:string){
-  console.log(id, name);
-  return JSON.stringify({ id, name });
-}
+@Module({
+  controllers: [UserController],
+  providers: [
+    {
+      provide: UserService, // 指定注入的token，也就是给类命名，默认是类名首字母小写
+      useClass: UserService, // 指定注入的类
+    },
+  ],
+})
+class UserModule {}
 ```
 
-**统一参数接收：**
+**provide 为字符串，useClass 为类**
 
 ```ts
-import { Body, Post } from '@nestjs/common';
-@Post()
-createUser(@Body() createForms: { id:string, name:string }){
-  console.log(createForms);
-  return JSON.stringify(createForms);
-}
+@Module({
+  controllers: [UserController],
+  providers: [
+    {
+      provide: 'user',
+      useClass: UserService,
+    },
+  ],
+})
+export class UserModule {}
 ```
+需要注意的是，provide 指定的字符串，在注入时需要使用 @Inject('user') 注入。
 
-### 总结
-
-`url param` 和 `query`, 都是在 url 中传递参数：
-
-- `url param` url 中的参数，Nest 中通过 `@Param()` 接收
-- `query` url 中?后面的参数，Nest 中通过 `@Query()` 接收
-
-`form urlencoded`、`form-data`、`json` , 都是在 body 中传递参数：
-
-- `form urlencoded` 类似 query 传参，区别是在 body 中传递参数，Nest 中通过 `@Body()` 接收
-
-- `form-data` 通常用于文件上传，非文件的参数，Nest 中通过 `@Body()` 接收
-
-- `json` json 格式的数据，Nest 中通过 `@Body()` 接收
+```ts
+ constructor(@Inject('user') private readonly userService: UserService) {}
+```
