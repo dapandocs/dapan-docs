@@ -534,7 +534,7 @@ pnpm config list
 
 ```bash
 
-pnpm cache clean --force
+pnpm store prune
 
 ```
 
