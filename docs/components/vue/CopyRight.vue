@@ -14,9 +14,9 @@ function getName(name: string) {
   return name === defaultAuthor ? "dapan" : name;
 }
 
-function getGithubLink(name: string) {
-  return `https://github.com/${name}`;
-}
+// function getGithubLink(name: string) {
+//   return `https://github.com/${name}`;
+// }
 </script>
 
 <template>
@@ -30,11 +30,12 @@ function getGithubLink(name: string) {
     <div i="fa6-solid-copyright" absolute top="12" right="16" />
     <div>
       <span font="bold">作 者：</span>
-      <span>
+      <!-- <span>
         <a :href="getGithubLink(author)" rel="noreferrer" target="_blank">
           {{ getName(author) }}
         </a>
-      </span>
+      </span> -->
+      <span>{{ getName(author) }}</span>
     </div>
     <div m="t-8">
       <span font="bold">链 接：</span>

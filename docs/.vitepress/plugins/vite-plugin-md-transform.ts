@@ -35,8 +35,12 @@ const generateCurrentMarkdown = (code: string, id: string) => {
 };
 
 async function getMarkdownComponents() {
-  const footer = `## 贡献者\n${getNoSSRComponents([
-    "Contributors",
+  // const footer = `## 贡献者\n${getNoSSRComponents([
+  //   "Contributors",
+  //   "CopyRight",
+  //   "Gitalk",
+  // ])}`;
+  const footer = `${getNoSSRComponents([
     "CopyRight",
     "Gitalk",
   ])}`;
