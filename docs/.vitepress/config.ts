@@ -116,11 +116,11 @@ export default withPwa(
         outlineTitle: "大纲",
         darkModeSwitchLabel: "外观",
         sidebarMenuLabel: "目录",
-        editLink: {
-          pattern: `${github}/blob/master/docs/:path`,
-          text: "为此页提供修改建议",
-        },
-        socialLinks: [{ icon: "github", link: github }],
+        // editLink: {
+        //   pattern: `${github}/blob/master/docs/:path`,
+        //   text: "为此页提供修改建议",
+        // },
+        // socialLinks: [{ icon: "github", link: github }],
       },
       transformHtml: (_, id, ctx) => {
         getSiteUrlLinks(id, ctx);
