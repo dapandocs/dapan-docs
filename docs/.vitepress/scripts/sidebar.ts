@@ -1,7 +1,7 @@
 import type { DefaultTheme } from "vitepress/types";
 
 export default {
-  "/reverse/jsreverse": [
+  "/reverse/jsreverse/": [
     {
       text: "JS逆向",
       collapsed: false,
