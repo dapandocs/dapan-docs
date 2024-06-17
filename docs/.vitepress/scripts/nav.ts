@@ -2,6 +2,12 @@ import type { DefaultTheme } from "vitepress/types";
 
 const nav: DefaultTheme.NavItem[] = [
   {
+    text: "🔥 逆向汇总",
+    items: [
+      { text: "JS逆向", link: "/reverse/jsreverse/" },
+    ],
+  },
+  {
     text: "🔥 前端框架",
     items: [
       { text: "React", link: "/framework/react/" },

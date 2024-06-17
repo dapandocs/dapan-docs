@@ -1,6 +1,15 @@
 import type { DefaultTheme } from "vitepress/types";
 
 export default {
+  "/reverse/jsreverse": [
+    {
+      text: "JS逆向",
+      collapsed: false,
+      items: [
+        { text: "某书", link: "/reverse/jsreverse/xhs" },
+      ],
+    },
+  ],
   "/framework/react": [
     {
       text: "React",
