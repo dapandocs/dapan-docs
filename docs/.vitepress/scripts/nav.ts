@@ -2,7 +2,7 @@ import type { DefaultTheme } from "vitepress/types";
 
 const nav: DefaultTheme.NavItem[] = [
   {
-    text: "🔥 主流框架",
+    text: "🔥 前端框架",
     items: [
       { text: "React", link: "/framework/react/" },
       { text: "Vue", link: "/framework/vue/" },
@@ -38,12 +38,13 @@ const nav: DefaultTheme.NavItem[] = [
     text: "📔 小 记",
     link: "/note/",
   },
-  // {
-  //   text: "🌐 站 点",
-  //   items: [
-  //     { text: "默认站点", link: "https://www.skillgroup.cn/" },
-  //     { text: "Vercel 站点", link: "https://dapandocs.vercel.app/" },
-  //   ],
-  // },
+  {
+    text: "🌐 站 点",
+    items: [
+      { text: "默认站点", link: "https://www.skillgroup.cn/" },
+      { text: "备用站点", link: "https://docs.skillgroup.cn/" },
+      { text: "Vercel 站点", link: "https://dapandocs.vercel.app/" },
+    ],
+  },
 ];
 export default nav;

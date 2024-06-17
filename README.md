@@ -7,11 +7,11 @@
 </h1>
 
 <p align="center">
-Full-stack Front-end Learning Website
+Full-stack Skill Learning Website
 </p>
 
 <p align="center">
-🔥前端进阶开发技巧，浏览器扩展开发技巧，React与Vue开发技巧，前端全链路学习网站
+🔥前端进阶开发技巧，浏览器扩展开发技巧，React与Vue开发技巧，全链路学习网站
 </p>
 
 ### 待补充...

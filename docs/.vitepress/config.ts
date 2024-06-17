@@ -100,7 +100,7 @@ export default withPwa(
         },
         sidebar,
         footer: {
-          message: `前端全链路学习网站，欢迎 <a target="_blank" style="color: var(--vp-c-brand)" href="${github}">star ⭐</a> 让更多人发现`,
+          message: `全链路学习网站，欢迎 <a target="_blank" style="color: var(--vp-c-brand)" href="${github}">star ⭐</a> 让更多人发现`,
           copyright: `<a target="_blank" href="https://beian.miit.gov.cn/">沪ICP备2023024648号-1</a> | 版权所有 © 2023 <a target="_blank" href="${github}">Anthony dapan</a>`,
         },
         // https://vitepress.dev/reference/default-theme-config
@@ -116,11 +116,11 @@ export default withPwa(
         outlineTitle: "大纲",
         darkModeSwitchLabel: "外观",
         sidebarMenuLabel: "目录",
-        // editLink: {
-        //   pattern: `${github}/blob/master/docs/:path`,
-        //   text: "为此页提供修改建议",
-        // },
-        // socialLinks: [{ icon: "github", link: github }],
+        editLink: {
+          pattern: `${github}/blob/master/docs/:path`,
+          text: "为此页提供修改建议",
+        },
+        socialLinks: [{ icon: "github", link: github }],
       },
       transformHtml: (_, id, ctx) => {
         getSiteUrlLinks(id, ctx);

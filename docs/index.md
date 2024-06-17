@@ -3,12 +3,12 @@
 layout: home
 
 title: 全栈小册
-titleTemplate: 前端全链路学习网站，学习原来如此简单
+titleTemplate: 全链路学习网站，学习原来如此简单
 
 hero:
   name: "全栈小册"
-  text: "Full-stack Front-end Learning Website"
-  tagline: 前端全链路学习网站，学习原来如此简单
+  text: "Full-stack Skill Learning Website"
+  tagline: 全链路学习网站，学习原来如此简单
   image:
     src: /images/home.svg
     alt: 全栈小册
