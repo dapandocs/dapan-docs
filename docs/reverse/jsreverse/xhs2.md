@@ -81,6 +81,14 @@ function rt() {
 ```js
 // 打印全部日志点
 "_ace_d656a值：", _ace_d656a, "_ace_7e97a值：", _ace_7e97a, "_ace_5ed3b值：", _ace_5ed3b, "_ace_0a916值：", _ace_0a916
+
+// 打印部分日志点，方便分析
+_ace_d656a &&
+   (
+    (typeof _ace_d656a === "string" && !["charAt", "charCodeAt", "length", "random", "Math", "ceil ", "fromCharCode", "match", "shouldJoker"].some(i=>i.includes(_ace_d656a))) ||
+    (typeof _ace_d656a === "object")
+   ) &&
+   console.log("_ace_d656a值：", _ace_d656a), 0
 ```
 ![vscode-debugger-1](/images/reverse/jsreverse/xhs/7.png)
 
@@ -161,7 +169,7 @@ function rt() {
 
 ![vscode-debugger-1](/images/reverse/jsreverse/xhs/17.png)
 
-让我们找到第一个`x1`出现的位置，再往上翻日志，有一系列加密，再往上翻，就看到了：`url=/api/sns/web/v1/search/hotlist?source=search_box`
+让我们找到第一个`x1`出现的位置时，再往上翻日志，有一系列加密，再往上翻，就看到了：`url=/api/sns/web/v1/search/hotlist?source=search_box`
 
 此时，嘴角上扬了。好像知道点什么。估计你们也知道了。
 
