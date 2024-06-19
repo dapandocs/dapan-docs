@@ -1,6 +1,6 @@
 # 某红薯扫码登录分析与协议
 
-> 【作者主页】：[小鱼神](https://img-blog.csdnimg.cn/2021062911555986.png)
+> 【作者主页】：[小鱼神1024](https://blog.csdn.net/studypy1024)
 >
 > 【擅长领域】：JS逆向、小程序逆向、AST还原、验证码突防、Python开发、浏览器插件开发、React前端开发、NestJS后端开发等等
 >
