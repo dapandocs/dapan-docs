@@ -1,20 +1,12 @@
 # 某书 x-s、x-t、x-s-common、x-b3-traceid 逆向分析
 
-
-> 【作者主页】：[小鱼神](https://img-blog.csdnimg.cn/2021062911555986.png)
->
-> 【擅长领域】：JS逆向、小程序逆向、AST还原、验证码突防、Python开发、浏览器插件开发、React前端开发、NestJS后端开发等等
->
-> 【学习交流】：知识星球：[小鱼成神之路](https://t.zsxq.com/gkn0r)；vx：`studypy1024`
-
-
 > 本文章中所有内容仅供学习交流使用，不用于其他任何目的，不提供完整代码，抓包内容、敏感网址、数据接口等均已做脱敏处理，严禁用于商业用途和非法用途，否则由此产生的一切后果均与作者无关！若有侵权，请联系作者立即删除！
 
 ### 前置分析
 
 我们在请求header中发现，有很多请求都带有`x-s`、`x-t`、`x-s-common`、`x-b3-traceid`这四个参数的值是动态变化的，所以我们猜测这四个参数应该是加密参数。
 
-![vscode-debugger-1](/images/reverse/jsreverse/xhs/1.png)
+![vscode-debugger-1](https://skillgroup.cn/images/reverse/jsreverse/xhs/1.png)
 
 
 
@@ -24,11 +16,11 @@
 
 全局搜索 `x-b3-traceid`，找到位置后打上断点
 
-![vscode-debugger-1](/images/reverse/jsreverse/xhs/2.png)
+![vscode-debugger-1](https://skillgroup.cn/images/reverse/jsreverse/xhs/2.png)
 
 可以发现 `x-b3-traceid` 是 `rt()` 生成的，找到其位置如下：
 
-![vscode-debugger-1](/images/reverse/jsreverse/xhs/3.png)
+![vscode-debugger-1](https://skillgroup.cn/images/reverse/jsreverse/xhs/3.png)
 
 那第一个加密参数就搞定了！
 
@@ -44,7 +36,7 @@ function rt() {
 
 全局搜索 `x-s`，找到位置后打上断点
 
-![vscode-debugger-1](/images/reverse/jsreverse/xhs/4.png)
+![vscode-debugger-1](https://skillgroup.cn/images/reverse/jsreverse/xhs/4.png)
 
 发现 `x-s`、`x-t` 是 `window._webmsxyw()` 生成的。
 
@@ -52,7 +44,7 @@ function rt() {
 
 当从 `window._webmsxyw()` 跳转到其位置后，如下：
 
-![vscode-debugger-1](/images/reverse/jsreverse/xhs/5.png)
+![vscode-debugger-1](https://skillgroup.cn/images/reverse/jsreverse/xhs/5.png)
 
 经过分析后，`window._webmsxyw()` 是通过 `JSVMP` 加密得到的。
 
@@ -73,7 +65,7 @@ function rt() {
 // 打印全部日志点
 "函数：", _ace_8712, "调用者：", _ace_25a6._ace_936, "函数形参：", _ace_bdcc
 ```
-![vscode-debugger-1](/images/reverse/jsreverse/xhs/6.png)
+![vscode-debugger-1](https://skillgroup.cn/images/reverse/jsreverse/xhs/6.png)
 
 
 日志点2如下：
@@ -82,7 +74,7 @@ function rt() {
 // 打印全部日志点
 "_ace_d656a值：", _ace_d656a
 ```
-![vscode-debugger-1](/images/reverse/jsreverse/xhs/7.png)
+![vscode-debugger-1](https://skillgroup.cn/images/reverse/jsreverse/xhs/7.png)
 
 插桩技巧：
 - 从入参开始分析
@@ -90,23 +82,23 @@ function rt() {
 
 这两种技巧要结合使用，效果才能最佳。
 
-![vscode-debugger-1](/images/reverse/jsreverse/xhs/8.png)
+![vscode-debugger-1](https://skillgroup.cn/images/reverse/jsreverse/xhs/8.png)
 
 以这个为例:
 入参是: `/api/sns/web/v1/search/hotlist?source=search_box`
 返回值如下图：
-![vscode-debugger-1](/images/reverse/jsreverse/xhs/9.png)
+![vscode-debugger-1](https://skillgroup.cn/images/reverse/jsreverse/xhs/9.png)
 
 此时找到第一个生成返回值的位置，如下：
 
-![vscode-debugger-1](/images/reverse/jsreverse/xhs/10.png)
+![vscode-debugger-1](https://skillgroup.cn/images/reverse/jsreverse/xhs/10.png)
 
 经分析，加密字符串种，只有`payload`是动态参数。那现在的任务，就是找到`payload`的加密算法和被加密字符串。
 
 
 继续找 `payload` 的第一个生成位置，如下：
 
-![vscode-debugger-1](/images/reverse/jsreverse/xhs/11.png)
+![vscode-debugger-1](https://skillgroup.cn/images/reverse/jsreverse/xhs/11.png)
 
 当我们找到第一个生成 `payload` 的位置后，惊喜的发现 `encrypt` 加密关键字。那问题来了，标准算法中，哪个加密算法有它呢？
 
@@ -116,19 +108,19 @@ function rt() {
 
 继续向上分析日志，发现有好多数组，如下：
 
-![vscode-debugger-1](/images/reverse/jsreverse/xhs/12.png)
+![vscode-debugger-1](https://skillgroup.cn/images/reverse/jsreverse/xhs/12.png)
 
 因为这一串数组，在加密和解密之前，这有理由让我相信它是加密算法的一部分，虽然看不懂，但是可以去搜索啊。
 
-![vscode-debugger-1](/images/reverse/jsreverse/xhs/13.png)
+![vscode-debugger-1](https://skillgroup.cn/images/reverse/jsreverse/xhs/13.png)
 
 此时，我们再也压不住心中的喜悦了。果然是 `DES` 加密算法。
 
-![vscode-debugger-1](/images/reverse/jsreverse/xhs/14.png)
+![vscode-debugger-1](https://skillgroup.cn/images/reverse/jsreverse/xhs/14.png)
 
 继续往上翻日志，发现它的加密字符串了。
 
-![vscode-debugger-1](/images/reverse/jsreverse/xhs/15.png)
+![vscode-debugger-1](https://skillgroup.cn/images/reverse/jsreverse/xhs/15.png)
 
 经过解密后，我们发现，加密字符串是：
 
@@ -154,12 +146,12 @@ function rt() {
 
 找到入参最后出现的地方，如下：
 
-![vscode-debugger-1](/images/reverse/jsreverse/xhs/16.png)
+![vscode-debugger-1](https://skillgroup.cn/images/reverse/jsreverse/xhs/16.png)
 
 此时得到：`url=/api/sns/web/v1/search/hotlist?source=search_box`
 
 
-![vscode-debugger-1](/images/reverse/jsreverse/xhs/17.png)
+![vscode-debugger-1](https://skillgroup.cn/images/reverse/jsreverse/xhs/17.png)
 
 让我们找到第一个`x1`出现的位置，再往上翻日志，有一系列加密，再往上翻，就看到了：`url=/api/sns/web/v1/search/hotlist?source=search_box`
 
@@ -169,7 +161,7 @@ function rt() {
 
 而且还是得到 32 位的加密字符串，没错，和你想的一样，我也想到了 `Md5` 加密算法，验证一下吧
 
-![vscode-debugger-1](/images/reverse/jsreverse/xhs/18.png)
+![vscode-debugger-1](https://skillgroup.cn/images/reverse/jsreverse/xhs/18.png)
 
 果然不出所料，就是 `Md5` 加密算法。
 
@@ -180,7 +172,7 @@ function rt() {
 
 全局搜索 `x-s-common`，找打位置后，打上断点，如下：
 
-![vscode-debugger-1](/images/reverse/jsreverse/xhs/19.png)
+![vscode-debugger-1](https://skillgroup.cn/images/reverse/jsreverse/xhs/19.png)
 
 ```js
  var u = e.headers["X-t"] || ""
@@ -211,7 +203,7 @@ e.headers["X-S-Common"] = encrypt_b64Encode(encrypt_encodeUtf8(stringify_default
 
 那先分析 `h` 参数：
 
-![vscode-debugger-1](/images/reverse/jsreverse/xhs/20.png)
+![vscode-debugger-1](https://skillgroup.cn/images/reverse/jsreverse/xhs/20.png)
 
 ```json
 {
@@ -235,7 +227,7 @@ e.headers["X-S-Common"] = encrypt_b64Encode(encrypt_encodeUtf8(stringify_default
 ```
 经过分析，`h` 的组成主要看 `x9`，也就是：`encrypt_mcr(concat_default()(r = concat_default()(n = "".concat(u)).call(n, s)).call(r, f))`
 
-![vscode-debugger-1](/images/reverse/jsreverse/xhs/21.png)
+![vscode-debugger-1](https://skillgroup.cn/images/reverse/jsreverse/xhs/21.png)
 
 
 很明显，`concat_default()()`的作用就是，将两个字符串相加操作，也就是合并字符串。
@@ -350,7 +342,7 @@ var encrypt_mcr = function(t) {
 
 一鼓作气，分析 `encrypt_b64Encode(encrypt_encodeUtf8(stringify_default()(h)))` 吧
 
-![vscode-debugger-1](/images/reverse/jsreverse/xhs/22.png)
+![vscode-debugger-1](https://skillgroup.cn/images/reverse/jsreverse/xhs/22.png)
 
 `stringify_default()` 的作用很明显了，就是 `JSON.stringify` 对象转字符串了。
 
@@ -547,6 +539,6 @@ function encrypt_b64Encode(t) {
 
 整理加密参数代码后，再写个小例子，验证一下吧！
 
-![vscode-debugger-1](/images/reverse/jsreverse/xhs/23.png)
+![vscode-debugger-1](https://skillgroup.cn/images/reverse/jsreverse/xhs/23.png)
 
 正常返回的结果，说明我们分析对了。晚上吃面给自己奖励一个荷包蛋吧！！
