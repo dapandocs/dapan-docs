@@ -6,7 +6,8 @@ export default {
       text: "JS逆向",
       collapsed: false,
       items: [
-        { text: "某书", link: "/reverse/jsreverse/xhs" },
+        { text: "某红薯x-s", link: "/reverse/jsreverse/xhs" },
+        { text: "某红薯扫码登录", link: "/reverse/jsreverse/xhs-scan-login" },
       ],
     },
   ],
