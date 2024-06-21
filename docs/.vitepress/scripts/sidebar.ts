@@ -8,7 +8,7 @@ export default {
       items: [
         { text: "某红薯x-s", link: "/reverse/jsreverse/xhs" },
         { text: "某红薯扫码登录", link: "/reverse/jsreverse/xhs-scan-login" },
-        { text: "某红薯旋转验证码", link: "/captcha/xhs/xhs" },
+        { text: "某红薯旋转验证码", link: "/reverse/jsreverse/xhs-captcha" },
       ],
     },
   ],
