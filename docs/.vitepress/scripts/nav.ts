@@ -5,6 +5,7 @@ const nav: DefaultTheme.NavItem[] = [
     text: "🔥 逆向汇总",
     items: [
       { text: "JS逆向", link: "/reverse/jsreverse/xhs" },
+      { text: "JS加密算法", link: "/reverse/encryption-algorithm/base64" },
     ],
   },
   {

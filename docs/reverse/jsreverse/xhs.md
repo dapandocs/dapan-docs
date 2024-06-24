@@ -1,11 +1,9 @@
-# 某红薯 x-s、x-t、x-s-common、x-b3-traceid 参数分析
+# 某书 x-s、x-t、x-s-common、x-b3-traceid 参数分析
 
 
 > 【作者主页】：[小鱼神1024](https://blog.csdn.net/studypy1024)
 >
 > 【擅长领域】：JS逆向、小程序逆向、AST还原、验证码突防、Python开发、浏览器插件开发、React前端开发、NestJS后端开发等等
->
-> 【学习交流】：知识星球：[小鱼成神之路](https://t.zsxq.com/gkn0r)；vx：`studypy1024`
 
 
 > 本文章中所有内容仅供学习交流使用，不用于其他任何目的，不提供完整代码，抓包内容、敏感网址、数据接口等均已做脱敏处理，严禁用于商业用途和非法用途，否则由此产生的一切后果均与作者无关！若有侵权，请联系作者立即删除！
@@ -81,6 +79,13 @@ function rt() {
 ```js
 // 打印全部日志点
 "_ace_d656a值：", _ace_d656a
+// 打印部分日志点，方便分析
+_ace_d656a &&
+   (
+    (typeof _ace_d656a === "string" && !["charAt", "charCodeAt", "length", "random", "Math", "ceil ", "fromCharCode", "match", "shouldJoker"].some(i=>i.includes(_ace_d656a))) ||
+    (typeof _ace_d656a === "object")
+   ) &&
+   console.log("_ace_d656a值：", _ace_d656a), 0
 ```
 ![vscode-debugger-1](/images/reverse/jsreverse/xhs/7.png)
 

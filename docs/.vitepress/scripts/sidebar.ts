@@ -6,9 +6,19 @@ export default {
       text: "JS逆向",
       collapsed: false,
       items: [
-        { text: "某红薯x-s", link: "/reverse/jsreverse/xhs" },
-        { text: "某红薯扫码登录", link: "/reverse/jsreverse/xhs-scan-login" },
-        { text: "某红薯旋转验证码", link: "/reverse/jsreverse/xhs-captcha" },
+        { text: "小红书x-s", link: "/reverse/jsreverse/xhs" },
+        { text: "小红书扫码登录", link: "/reverse/jsreverse/xhs-scan-login" },
+        { text: "小红书旋转验证码", link: "/reverse/jsreverse/xhs-captcha" },
+      ],
+    },
+  ],
+  "/reverse/encryption-algorithm/": [
+    {
+      text: "JS加密算法",
+      collapsed: false,
+      items: [
+        { text: "Base64", link: "/reverse/encryption-algorithm/base64" },
+        { text: "MD5", link: "/reverse/encryption-algorithm/md5" },
       ],
     },
   ],
