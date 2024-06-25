@@ -1,6 +1,22 @@
 import type { DefaultTheme } from "vitepress/types";
 
 export default {
+  "/reverse/basic/": [
+    {
+      text: "JS基础",
+      collapsed: false,
+      items: [
+        {
+          text: "JS Hook 脚本",
+          link: "/reverse/basic/hook",
+        },
+        {
+          text: "JS WordArray 数组",
+          link: "/reverse/basic/word-array",
+        },
+      ],
+    },
+  ],
   "/reverse/jsreverse/": [
     {
       text: "JS逆向",
@@ -167,7 +183,10 @@ export default {
       items: [
         { text: "简述", link: "/framework/nestjs/" },
         { text: "依赖注入（IOC）", link: "/framework/nestjs/ioc" },
-        { text: "5 种参数传递方式", link: "/framework/nestjs/request-parameters" },
+        {
+          text: "5 种参数传递方式",
+          link: "/framework/nestjs/request-parameters",
+        },
         { text: "provider 依赖注入", link: "/framework/nestjs/provider" },
         { text: "模块", link: "/framework/nestjs/module" },
       ],
