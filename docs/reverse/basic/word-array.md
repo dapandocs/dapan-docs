@@ -229,6 +229,22 @@ console.log(decodedString);
 
 ### 为什么 AES、DES等加密时，要先转化 WrodArray
 
+```javascript
+// AES 加密
+function encrypt(word) {
+     // 转化为 WordArray
+    const iv = CryptoJS.enc.Utf8.parse("0102030405060708");
+     // 转化为 WordArray
+    const key = CryptoJS.enc.Utf8.parse('wm0!@w-s#ll1flo(');
+    const encrypted = CryptoJS.AES.encrypt(word, key, {
+        iv,
+        mode: CryptoJS.mode.CBC,
+        padding: CryptoJS.pad.Pkcs7
+    })
+    return encrypted.toString();
+}
+```
+
 转化为32位二进制数据再进行加密是出于以下几个主要原因：
 
 - **加密算法的要求**：几乎所有的现代加密算法，包括对称加密（如AES）和非对称加密（如RSA），在底层操作时都是以二进制数据形式工作的。这是因为加密算法在设计时需要操作位（bit）和字节（byte），而不是高级语言中的文本或数字等类型。因此，将数据转换为二进制形式是执行这些算法的必要步骤。
