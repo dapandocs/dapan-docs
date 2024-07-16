@@ -7,6 +7,7 @@ const nav: DefaultTheme.NavItem[] = [
       { text: "JS基础", link: "/reverse//basic/hook" },
       { text: "JS逆向", link: "/reverse/jsreverse/xhs" },
       { text: "JS加密算法", link: "/reverse/encryption-algorithm/base64" },
+      { text: "JS补环境", link: "/reverse/env/prototype" },
     ],
   },
   {

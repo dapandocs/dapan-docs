@@ -28,6 +28,16 @@ export default {
       ],
     },
   ],
+  "/reverse/env/": [
+    {
+      text: "JS补环境",
+      collapsed: false,
+      items: [
+        { text: "创建js对象的几种方式", link: "/reverse/env/create-obj" },
+        { text: "原型、原型对象、实例对象三者互相转化", link: "/reverse/env/prototype" },
+      ],
+    },
+  ],
   "/reverse/encryption-algorithm/": [
     {
       text: "JS加密算法",
