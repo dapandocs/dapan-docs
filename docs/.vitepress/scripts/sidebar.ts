@@ -38,6 +38,15 @@ export default {
       ],
     },
   ],
+  "/reverse/framework/": [
+    {
+      text: "逆向框架",
+      collapsed: false,
+      items: [
+        { text: "插桩日志框架", link: "/reverse/framework/save-log" },
+      ],
+    },
+  ],
   "/reverse/encryption-algorithm/": [
     {
       text: "JS加密算法",
