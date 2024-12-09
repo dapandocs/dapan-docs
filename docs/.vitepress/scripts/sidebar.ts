@@ -44,6 +44,7 @@ export default {
       collapsed: false,
       items: [
         { text: "插桩日志框架", link: "/reverse/framework/save-log" },
+        { text: "抖音a_bogus签名算法", link: "/reverse/framework/dy" },
       ],
     },
   ],
